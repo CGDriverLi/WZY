@@ -1,308 +1,106 @@
-﻿<!DOCTYPE html>
-<html lang="zh">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HTML5全屏可拖拽图片横向切换代码 - 站长素材</title>
-
-<link rel="stylesheet" type="text/css" href="css/base.css" />
-
-<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
-
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>js图片相册弹出预览特效 - 站长素材</title>
+<style type="text/css">
+*{padding:0; margin:0}
+#mbOverlay { position:fixed; z-index:9998; top:0; left:0; width:100%; height:100%; background-color:#000; cursor:pointer; }
+#mbOverlay.mbOverlayFF { background:transparent url(80.png) repeat; }
+#mbOverlay.mbOverlayIE { position:absolute; }
+#mbCenter { height:557px; position:absolute; z-index:9999; left:50%; background-color:#fff; -moz-border-radius:10px; -webkit-border-radius:10px; -moz-box-shadow:0 10px 40px rgba(0, 0, 0, 0.70); -webkit-box-shadow:0 10px 40px rgba(0, 0, 0, 0.70); }
+#mbCenter.mbLoading { background:#fff url(images/WhiteLoading.gif) no-repeat center; -moz-box-shadow:none; -webkit-box-shadow:none; }
+#mbImage { left:0; top:0; font-family:Myriad, Verdana, Arial, Helvetica, sans-serif; line-height:20px; font-size:12px; color:#fff; text-align:left; background-position:center center; background-repeat:no-repeat; padding:10px; }
+#mbImage a, #mbImage a:link, #mbImage a:visited { color:#ddd; }
+#mbImage a:hover, #mbImage a:active { color:#fff; }
+#mbBottom { min-height:20px; font-family:Myriad, Verdana, Arial, Helvetica, sans-serif; line-height:20px; font-size:12px; color:#999; text-align:left; padding:0 10px 10px; }
+#mbTitle { display:inline; color:#999; font-weight:bold; line-height:20px; font-size:12px; }
+#mbNumber { background:url(images/mbNumber_bg.gif) no-repeat center; display:inline; color:#C00; line-height:26px; font-size:12px; position: absolute; bottom: 10px; right: 10px; text-align: center; width:65px; height:26px; }
+#mbCaption { display:block; color:#999; line-height:14px; font-size:10px; }
+#mbPrevLink, #mbNextLink, #mbCloseLink { display:block; float:right; height:20px; margin:0; outline:none; }
+#mbPrevLink { width:32px; height:100px; background:transparent url(images/CustomBlackPrevious.gif) no-repeat center; position: absolute; top:38%; left:-32px; }
+#mbNextLink { width:32px; height:100px; background:transparent url(images/CustomBlackNext.gif) no-repeat center; position: absolute; top:38%; right:-32px; }
+#mbCloseLink { width:24px; background:transparent url(images/CustomBlackClose.gif) no-repeat center; position:absolute; top:10px; right:10px; }
+#mbError { position:relative; font-family:Myriad, Verdana, Arial, Helvetica, sans-serif; line-height:20px; font-size:12px; color:#fff; text-align:center; border:10px solid #700; padding:10px 10px 10px; margin:20px; -moz-border-radius:5px; -webkit-border-radius:5px; }
+#mbError a, #mbError a:link, #mbError a:visited, #mbError a:hover, #mbError a:active { color:#d00; font-weight:bold; text-decoration:underline; }
+.layout_default{float:left; margin:5px}
+.mod_gallerylist{width:665px; margin:0 auto}
+.meta{font-size:12px; text-align:center;}
+.image_container img{border:1px solid #CCC; padding:2px}
+.meta a{color:#333; text-decoration:none}
+</style>
+<script type="text/javascript" src="js/mootools-core.js"></script>
+<script type="text/javascript" src="js/mediabox.js"></script>
 </head>
-<body class="loading">
-
-<main>
-	<div class="frame">
-		<div class="frame__title-wrap">
-			<h1 class="frame__title">可拖动图像条</h1>
-			<div class="frame__links">
-				<a href="">站长素材</a>
-			</div>
-		</div>
-		<h3 class="frame__subtitle">Morandi - 2019</h3>
-		<div class="frame__indicator"></div>
-	</div>
-	
-	<div class="strip-outer">
-		<div class="strip-inner">
-			<div class="draggable"></div>
-			<div class="strip">
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-s"><div class="img-inner" style="background-image:url('img/1.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>01</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-m"><div class="img-inner" style="background-image:url('img/2.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>02</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-xl"><div class="img-inner" style="background-image:url('img/3.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>03</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-l"><div class="img-inner" style="background-image:url('img/4.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>04</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-s"><div class="img-inner" style="background-image:url('img/5.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>05</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-m"><div class="img-inner" style="background-image:url('img/6.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>06</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-s"><div class="img-inner" style="background-image:url('img/7.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>07</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-l"><div class="img-inner" style="background-image:url('img/8.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>08</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-s"><div class="img-inner" style="background-image:url('img/9.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>09</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer"><div class="img-inner" style="background-image:url('img/10.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>10</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-s"><div class="img-inner" style="background-image:url('img/11.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>11</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-xl"><div class="img-inner" style="background-image:url('img/12.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>12</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-s"><div class="img-inner" style="background-image:url('img/13.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>13</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-l"><div class="img-inner" style="background-image:url('img/14.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>14</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-s"><div class="img-inner" style="background-image:url('img/15.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>15</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-l"><div class="img-inner" style="background-image:url('img/16.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>16</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-m"><div class="img-inner" style="background-image:url('img/17.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>17</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer"><div class="img-inner" style="background-image:url('img/18.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>18</span></a><span class="strip__item-plus"></span></span>
-				</div>
-				<div class="strip__item">
-					<div class="img-outer img-outer--size-s"><div class="img-inner" style="background-image:url('img/19.jpg');"></div></div>
-					<span class="strip__item-number"><a class="strip__item-link"><span>19</span></a><span class="strip__item-plus"></span></span>
-				</div>
-			</div><!--/strip-->
-		</div><!--/strip-inner-->
-		<div class="strip-cover">
-			<h2 class="strip-cover__title">Morandi</h2>
-			<span class="strip-cover__subtitle">2019</span>
-		</div>
-	</div><!--/strip-outer-->
-	<div class="content">
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/1.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Assemblage</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/2.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Wherewithal</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/3.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Surreptitious</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/4.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Onomatopoeia</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/5.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Nemesis</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/6.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Penumbra</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/7.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Cathedral</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/8.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Propinquity</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/9.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Lissome</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/10.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Moiety</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/11.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Mondegreen</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/12.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Cathedral</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/13.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Gambol</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/14.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Forbearance</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/15.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Evanescent</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/16.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Embrocation</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/17.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Bucolic</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/18.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Eloquence</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<article class="content__item">
-			<div class="img-outer img-outer--content">
-				<div class="img-inner img-inner--content" style="background-image: url(img/19.jpg);"></div>
-			</div>
-			<div class="content__item-copy">
-				<h2 class="content__item-title">Cathedral</h2>
-				<p class="content__item-text">Virtually no important undertaking is now carried on without it, whether that enterprise be building a cathedral, endowing a university, marketing a moving picture, floating a large bond issue, or electing a president.</p>
-			</div>
-		</article>
-		<button class="content__close" aria-label="Close content"><svg width="12" height="26" viewBox="0 0 12 26"><path d="M5.293 25H5v-.293l-5-5L.707 19 5 23.293V0h1v23.657L10.657 19l.707.707-5.657 5.657-.025-.025-.025.025L5.293 25z"></svg></svg></button>
-	</div>
-	
-</main>
-
-<div class="cursor">
-	<div class="cursor__inner cursor__inner--circle">
-		<div class="cursor__side cursor__side--left"></div>
-		<div class="cursor__side cursor__side--right"></div>
-	</div>
+<body>
+<div style="background:#FFF; padding:50px; height:460px">
+<!--效果开始-->
+<div class="mod_gallerylist">
+  <div class="layout_default">
+    <p class="info"><span class="date"></span> <span class="author"></span></p>
+    <div class="image_container">
+    <a href="images/intke_big13374491051476485372.jpg" rel="lightbox[ostec]" title="站长素材网站建设"> <img src="images/intke_sml133744910520499347.jpg" alt="站长素材网站建设"> </a>
+    </div>
+    <div class="meta"><a href="http://sc.chinaz.com/?m1_web_ction_3.html" target="_blank">Test1</a></div>
+  </div>
+  <div class="layout_default">
+    <p class="info"><span class="date"></span> <span class="author"></span></p>
+    <div class="image_container"> <a href="images/intke_big13374504021333938490.jpg" rel="lightbox[ostec]" title="站长素材HTML学习"> <img src="images/intke_sml13374504021636181143.jpg" alt="站长素材HTML学习"> </a> </div>
+    <div class="meta"><a href="http://sc.chinaz.com/?m2_itm_mode2_28.html" target="_blank">Test2</a></div>
+  </div>
+  <div class="layout_default">
+    <p class="info"><span class="date"></span> <span class="author"></span></p>
+    <div class="image_container"> <a href="images/intke_big1337449105730755107.jpg" rel="lightbox[ostec]" title="站长素材图文特效"> <img src="images/intke_sml1337449105477712782.jpg" alt="站长素材图文特效"> </a> </div>
+    <div class="meta"><a href="http://sc.chinaz.com/?m2_js_mode1_27.html" target="_blank">Test3</a></div>
+  </div>
+  <div class="layout_default">
+    <p class="info"><span class="date"></span> <span class="author"></span></p>
+    <div class="image_container"> <a href="images/intke_big133744930430337079.jpg" rel="lightbox[ostec]" title="站长素材文字特效"> <img src="images/intke_sml1337449304825420900.jpg" alt="站长素材文字特效"> </a> </div>
+    <div class="meta"><a href="http://sc.chinaz.com/?m2_js_txtMode1_30.html" target="_blank">Test4</a></div>
+  </div>
+  <div class="layout_default">
+    <p class="info"><span class="date"></span> <span class="author"></span></p>
+    <div class="image_container"> <a href="images/intke_big13374494201592646066.jpg" rel="lightbox[ostec]" title="站长素材网站教程"> <img src="images/intke_sml13374494201301118452.jpg" alt="站长素材网站教程"> </a> </div>
+    <div class="meta"><a href="http://sc.chinaz.com/?m2_itm_mode2_37.html" target="_blank">Test5</a></div>
+  </div>
+  <div class="layout_default">
+    <p class="info"><span class="date"></span> <span class="author"></span></p>
+    <div class="image_container"> <a href="images/intke_big13374495191424249848.jpg" rel="lightbox[ostec]" title="站长素材web应用"> <img src="images/intke_sml13374495191050454634.jpg" alt="站长素材web应用"> </a> </div>
+    <div class="meta"><a href="http://sc.chinaz.com/?m2_itm_mode2_4.html" target="_blank">Test6</a></div>
+  </div>
+  <div class="layout_default">
+    <p class="info"><span class="date"></span> <span class="author"></span></p>
+    <div class="image_container"> <a href="images/intke_big1337449672927723673.jpg" rel="lightbox[ostec]" title="站长素材精品网站"> <img src="images/intke_sml13374496721104375571.jpg" alt="站长素材精品网站"> </a> </div>
+    <div class="meta"><a href="http://sc.chinaz.com/?m2_web_module_20.html" target="_blank">Test7</a></div>
+  </div>
+  <div class="layout_default">
+    <p class="info"><span class="date"></span> <span class="author"></span></p>
+    <div class="image_container"> <a href="images/intke_big1337450114295777140.jpg" rel="lightbox[ostec]" title="站长素材技术分享"> <img src="images/intke_sml13374501141381000271.jpg" alt="站长素材技术分享"> </a> </div>
+    <div class="meta">Test8</div>
+  </div>
+  <div class="layout_default">
+    <p class="info"><span class="date"></span> <span class="author"></span></p>
+    <div class="image_container"> <a href="images/intke_big13374502591823245699.jpg" rel="lightbox[ostec]" title="站长素材网站SEO"> <img src="images/intke_sml1337450259850139751.jpg" alt="站长素材网站SEO"> </a> </div>
+    <div class="meta"><a href="http://sc.chinaz.com/?m2_itm_mode2_19.html" target="_blank">Test9</a></div>
+  </div>
 </div>
-<script src="js/imagesloaded.pkgd.min.js"></script>
-<script src="js/TweenMax.min.js"></script>
-<script src="js/draggabilly.pkgd.min.js"></script>
-<script src="js/demo.js"></script>
-<script>
-	// Preload all the images in the page
-	imagesLoaded(document.querySelectorAll('.img-inner'), {background: true}, () => document.body.classList.remove('loading'));
+<script type="text/javascript">
+Mediabox.scanPage = function() {
+  var links = $$("a").filter(function(el) {
+    return el.rel && el.rel.test(/^lightbox/i);
+  });
+  $$(links).mediabox({/* Put custom options here */}, null, function(el) {
+    var rel0 = this.rel.replace(/[[]|]/gi," ");
+    var relsize = rel0.split(" ");
+    return (this == el) || ((this.rel.length > 8) && el.rel.match(relsize[1]));
+  });
+};
+window.addEvent("domready", Mediabox.scanPage);
 </script>
+<!--End-->
+</div>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. </p>
+<p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+</div>
 
-</body>
-</html>
+<div id="mbOverlay" style="display: none; visibility: hidden; zoom: 1; opacity: 0;"></div><div id="mbCenter" style="display: none;"><div id="mbImage"></div><div id="mbBottom" style="visibility: hidden; zoom: 1; opacity: 0;"><a id="mbCloseLink" href="#"></a><a id="mbNextLink" href="#"></a><a id="mbPrevLink" href="#"></a><div id="mbTitle"></div><div id="mbNumber"></div><div id="mbCaption"></div></div></div></body></html>
