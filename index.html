@@ -1,164 +1,136 @@
-<html lang="en"><head>
-<meta name="Generator" content="www.genban.org">
-<meta charset="gb2312">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0">
-<title>电子产品销售展示类移动营销页织梦模板-跟版网演示</title>
-<link href="/images/css/responsive.css" rel="stylesheet">
-<link href="/images/css/bootstrap.min.css" rel="stylesheet">
-<script src="/images/js/jquery.min.js"></script>
-<script src="/images/js/rhyrys.min.js"></script>
-<script src="/images/js/jquery.qrcode.min.js"></script>
-<style>
- html{height:100%}
-body{height:100%}
-.code_show{width:36px;height:36px;cursor:pointer;display:inline-block}
-.buy{width:36px;height:36px;cursor:pointer;display:inline-block;margin-right:5px}
-.mask{display:none;position:fixed;right:0;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:99}
-.content_code{width:440px;height:440px;background:#fff;position:absolute;z-index:100;left:50%;margin-left:-220px;top:50%;margin-top:-220px}
-.code_tips{background:url(/images/code_tips.png) center center no-repeat;width:102px;height:90px;position:absolute;bottom:-20px;left:50%;margin-left:-51px}
-.code_area{width:230px;height:230px;position:absolute;left:50%;margin-left:-115px;top:50%;margin-top:-135px}
-.close{position:absolute;right:30px;bottom:20px;cursor:pointer;opacity:1}
-.rhy_tips{position:absolute;bottom:-101px;left:50%;margin-left:-160px;z-index:99}
-.rhy_tips .close{right:2px;bottom:72px;font-weight:500;font-size:30px;color:gray}
-svg{width:0;height:0;display:none}
-.loading{margin:100px auto;display:flex;justify-content:space-around;align-items:center}
-.goo1,.goo2{-webkit-filter:url(#goo)}
-.loading div{background:#FD5F46;width:25px;height:25px;border-radius:50%}
-@-webkit-keyframes sideways{33%{transform:translateX(50px)}
-66%{transform:translateX(-50px)}
-}
-@keyframes sideways{33%{transform:translateX(50px)}
-66%{transform:translateX(-50px)}
-}
-.goo2>div{transform:translateX(0);animation:sideways 2.5s infinite ease;-webkit-animation:sideways 2.5s infinite ease}
-.goo2>div:nth-child(1){animation-delay:.25s;-webkit-animation-delay:.25s}
-.goo2>div:nth-child(2){animation-delay:.5s;-webkit-animation-delay:.5s}
-.goo2>div:nth-child(3){animation-delay:.75s;-webkit-animation-delay:.75s}
-.goo2>div:nth-child(4){animation-delay:1s;-webkit-animation-delay:1s}
-.goo2>div:nth-child(5){animation-delay:1.25s -webkit-animation-delay: 1.25s}
-.goo2{width:200px;height:100px;position:absolute;left:0;right:0;top:50%;margin-top:-50px}
-#iframeWait{background:url(/images/load.gif) no-repeat center center!important;background-color:#fff!important}
-.tel_bg{font-size:22px;color:#FD5F46;background:url(/images/logo.png) left center no-repeat;padding-left:42px;margin-top:15px;white-space:nowrap;padding-top:5px;padding-bottom:5px}
-@media (min-width:1200px){.tel_box{position:inherit}
-.center{position:relative}
-.tel_bg{position:absolute;left:50px}
-}
-</style>
+锘�<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>閫稿鐢疯</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_669710_cvmr6vf72aux47vi.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1289493_zg8o4sfnmw.css">
+    <link rel="stylesheet" href="/v2/static/css/home.preview.min.css">
+    <link rel="stylesheet" href="/v2/static/js/layui/css/layui.css">
+    <link id="layuicss-layer" rel="stylesheet" href="https://www.huanqing365.com/v2/static/js/layui/css/modules/layer/default/layer.css?v=3.1.1" media="all"></head>
+
+<body style="">
+<div class="h5-preview mainbody">
+    <div class="phonewrap">
+        <div class="workarea" id="sceneworkarea">
+            <iframe src="https://www.huanqing365.com/h5/preview/H5mHxWHSXLXY" id="preiframe" scrolling="no" allow="autoplay; fullscreen" allowfullscreen="true" webkitallfullscreen="true" mozallowfullscreen="true" style="width: 322px; height: 509px;" __idm_frm__="970" __idm_id__="1006777345"></iframe>
+        </div>
+        <div class="tipmsg" style="display: none;">
+            ????????????
+        </div>
+    </div>
+
+
+    <span class="closetk pa layui-icon layui-icon-close"></span>
+</div>
 <script>
- $(function(){
-		$('#case_iframe').attr("src","https://demo.genban.org/1982");
-		txt="https://demo.genban.org/1982";
-
-		$('#case_iframe').load(function(){
-			
-			$('#iframeWait').fadeOut();
-		});
-	$(".close").click(function() {
-		$('.mask').hide()
-	});
-	$('.code_show').click(function() {
-		$('.mask').show();
-		$('.code_area').empty();
-		
-		$(".code_area").qrcode({
-			render: "table", 
-			width: 230, 
-			height: 230,
-			text: txt,
-			foreground:"#F30"
-		});
-	});
- });
+    var HOLD_URL = '/api/collect/collect.html';
+    var LOGIN_URL = '/user/system/newlogin.html';
+    var QQ_LOGIN_URL = '/user/system/qqlogin.html';
+    var PHONE_URL = '/user/system/phonelogin.html';
+    var QRCODE_LINK = 'https://www.huanqing365.com/h5/preview/H5mHxWHSXLXY';
+    var CREATE_H5_URL = 'https://www.huanqing365.com/h5editor.html?id=5411';
 </script>
-</head>
-<body>
+<script type="text/javascript" src="/v2/static/js/jquery.min.js?ver=ea4c9a1da7c110f"></script>
+<script type="text/javascript" src="/v2/static/js/layui/layui.js?ver=ea4c9a1da7c110f"></script>
+<script type="text/javascript" src="/v2/static/js/qrcode.min.js?ver=ea4c9a1da7c110f"></script>
+<script type="text/javascript" src="/v2/static/js/home.common.min.js?ver=780372cbf062252"></script>
+<script type="text/javascript" src="/v2/static/js/home.base.min.js?ver=ef7b8560a986b4a"></script>
+<script type="text/javascript" src="/v2/static/js/clipboard.min.js?ver=98e8ae7f34fea6b"></script>
+<script type="text/javascript" src="/v2/static/js/home.preview.min.js?ver=d5dfa109c4493e6"></script>
+<script type="text/javascript" src="/v2/static/js/home.pay.min.js"></script>
+<script>
 
-    <div id="switcher">
-        <div class="center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-3 hidden-xs tel_box"><a href="/"><img src="/images/logo.png" height="60"></a></div>
-                    <div class="col-xs-12 col-sm-6">
-                        <ul>
-                            <div id="Device">
-                                <li class="device-monitor">
-                                    <a href="javascript:">
-                                        <div class="icon-monitor active"></div>
-                                    </a>
-                                </li>
-                                <li class="device-mobile">
-                                    <a href="javascript:">
-                                        <div class="icon-tablet"></div>
-                                    </a>
-                                </li>
-                                <li class="device-mobile">
-                                    <a href="javascript:">
-                                        <div class="icon-mobile-1"></div>
-                                    </a>
-                                </li>
-                                <li class="device-mobile-2">
-                                    <a href="javascript:">
-                                        <div class="icon-mobile-2"></div>
-                                    </a>
-                                </li>
-                                <li class="device-mobile-3">
-                                    <a href="javascript:">
-                                        <div class="icon-mobile-3"></div>
-                                    </a>
-                                </li>
-                            </div>
-                        </ul>
-                        <div class="rhy_tips">
-                            <img src="/images/rhy_tips.png" alt="" class="img-responsive center-block">
-                            <div class="close" id="close_tips">×</div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 buttons_abs">
-                        <div class="pull-right buttons_box">
-                            <div class="buy">
-                                <a href="/mobile/moban-20796.html"><img src="/images/buy2.png" alt="" title="购买模板" class="img-responsive center-block"></a>
-                            </div>
-                            <div class="code_show">
-                                <img src="/images/show_code_03.jpg" alt="" title="扫描模板二维码" class="img-responsive center-block">
-                            </div>
+    $('.tipmsg').fadeIn();
+    setTimeout(function () {
+        $('.tipmsg').fadeOut();
+    }, 5000);
+    //h5
+    var workarea_w = $('#sceneworkarea').width();
+    var workarea_h = $('#sceneworkarea').height();
+    $('iframe#preiframe').css({
+        'width': workarea_w,
+        'height': workarea_h,
+    });
 
-                            <div class="qq_kf">
-                                <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2655101040&amp;site=qq&amp;menu=yes" title="咨询客服"></a>
-                            </div>
-                            <div class="remove_frame">
-                                <a href="javascript:;" title="移除框架" id="close_header"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="iframe-wrap">
-        <div id="iframeWait" style="display: none;">
-        </div>
-        <iframe id="case_iframe" src="https://demo.genban.org/1982" frameborder="0" width="100%" height="100%" __idm_frm__="877"></iframe>
-    </div>
-    <div class="mask">
-        <div class="content_code">
-            <div class="code_area">
-            </div>
-            <div class="code_tips"></div>
-            <div class="close"><img src="/images/close.png" alt="" class=""></div>
-        </div>
-    </div>
-    <script>
-    $(function() {
-        $('#close_header').click(function() {
-            $('.header,#switcher').slideUp();
-        });
-        $('#close_tips').click(function() {
-            $(".rhy_tips").hide();
+    var b = parent.layer.getFrameIndex(window.name);
+    $('.closetk').click(function () {
+        parent.layer.close(b);
+    });
+    var islogin = false;
+    if ('191283' != null && '191283' != undefined && '191283' != '') {
+        islogin = true;
+    }
+    $('.freebtn').click(function () {
+        if (islogin) {
+            parent.open('/user/vip');
+        } else {
+            parent.open('/vip');
+        }
+    });
+    $('.torcharge').click(function () {
+        parent.open('/user/account');
+    });
+
+    layui.use(['layer'], function () {
+        var layer = layui.layer;
+        $('.edit').on('click', function (e) {
+            var url = $(this).data('url');
+            var t = this;
+            var clicked = $(this).data('clicked');
+            if (clicked) {
+                return false;
+            } else {
+                $(this).data('clicked', true);
+                $.ajax({
+                    url: url,
+                    success: function (info) {
+                        if (info.data == 0) {
+                            layer.msg(info.msg, {
+                                offset: '30%',
+                            });
+                        }
+                        if (info.code === 1) {
+                            setTimeout(function () {
+                                parent.location.href = info.url;
+                            }, 1000);
+                        } else {
+                            $(t).data('clicked', false);
+                        }
+                    },
+                });
+            }
         });
     });
-    </script>
-	<div style="display:none"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5775322'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/stat.php%3Fid%3D5775322' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_5775322"><a href="https://www.cnzz.com/stat/website.php?web_id=5775322" target="_blank" title="站长统计">站长统计</a></span><script src=" https://s13.cnzz.com/stat.php?id=5775322" type="text/javascript"></script><script src="https://c.cnzz.com/core.php?web_id=5775322&amp;t=z" charset="utf-8" type="text/javascript"></script></div>
+    var childwindow = document.getElementById('preiframe').contentWindow;
+    var interval = setInterval(function () {
+        // if (childwindow.prenext && childwindow.prenext.swiper && childwindow.prenext.pagesData) {
+        //     clearInterval(interval);
+        //     $('.prebtn').click(function () {
+        //         childwindow.prenext.prePageClick();
+        //     });
+        //     $('.nextbtn').click(function () {
+        //         childwindow.prenext.nextPageClick();
+        //     });
+        //     childwindow.prenext.swiper.on('slideChangeTransitionEnd', function () {
+        //         var pagenum = childwindow.prenext.swiper.realIndex + 1 + '/' + childwindow.prenext.pagesData.length;
+        //         $('.page-num').text(pagenum);
+        //     });
+        // }
+        if (childwindow.swiperView && childwindow.swiperView.swiper && childwindow.swiperView.scenePages) {
+            clearInterval(interval);
+            $('.prebtn').click(function () {
+                childwindow.swiperView.goPrev();
+            });
+            $('.nextbtn').click(function () {
+                childwindow.swiperView.goNext();
+            });
+            childwindow.swiperView.swiper.on('slideChangeTransitionEnd', function () {
+                var pagenum = childwindow.swiperView.scrollPage + 1 + '/' + childwindow.swiperView.scenePages.length;
+                $('.page-num').text(pagenum);
+            });
+        }
+    }, 100);
+</script>
 
 
 </body></html>
