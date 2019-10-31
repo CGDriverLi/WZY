@@ -318,7 +318,7 @@ body {
 	z-index: 2;
 	top: 0.32rem;
 	left: 50%;
-	margin-left: -1.4rem;
+	margin-left: 0rem;
 	background-color: #8e2cb7;
 	padding: 0rem;
 }
