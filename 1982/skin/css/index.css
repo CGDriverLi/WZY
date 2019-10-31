@@ -1,4 +1,4 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 /*首页样式*/
 body {
 	max-width: 6.4rem;
@@ -318,9 +318,9 @@ body {
 	z-index: 2;
 	top: 0.32rem;
 	left: 50%;
-	margin-left: 0rem;
+	margin-left: -1.4rem;
 	background-color: #8e2cb7;
-	padding: 0rem;
+	padding: 0 0.2rem;
 }
 .index_about .head_b img {
 	display: block;
