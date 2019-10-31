@@ -239,6 +239,35 @@
   <div class="item">
     <div class="icon_addr"><img src="/Test1/1982/skin/images/foot_icon08.png" alt=""></div>
     <div class="msg">深圳市南山区南山科技园</div>
+    <div id="container"></div> 
+
+<script type="text/javascript"> 
+
+var map = new BMap.Map("container");          // 创建地图实例  
+
+var point = new BMap.Point(119.3,26.08);  // 创建点坐标  
+
+map.centerAndZoom(point, 15);                 // 初始化地图，设置中心点坐标和地图级别 
+
+var marker = new BMap.Marker(point);        // 创建标注    
+
+map.addOverlay(marker);                     //将标注添加到地图中
+
+var opts1 = {type: BMAP_NAVIGATION_CONTROL_LARGE} 
+
+map.addControl(new BMap.NavigationControl(opts1)); 
+
+var opts2 = {offset: new BMap.Size(150, 5)}  
+
+map.addControl(new BMap.ScaleControl(opts2)); 
+
+map.addControl(new BMap.OverviewMapControl());    
+
+map.addControl(new BMap.MapTypeControl());    
+
+map.setCurrentCity("福州");   
+
+</script> 
   </div>
 </div>
 <div class="footer"> <a href="/Test1/" title="返回首页" style="background-image:url(/Test1/1982/skin/images/ico-home.png); background-size:0.34rem 0.34rem;"> <span>返回首页</span> </a>
