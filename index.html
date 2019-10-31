@@ -69,55 +69,55 @@
 <div class="bg_b"><a href="/Test1/" title="广告2"><img src="/Test1/1982/skin/images/ad04.jpg"></a></div>
 <div class="allpage">
   <div class="head_b" style="padding:0;"><img src="/Test1/1982/skin/images/form-header.jpg" alt="" style="display: block;"></div>
-  <div class="content">
-    <p class="red_alert"></p>
-    <ul class="login">
-      <div class="head_title">数量有限，在线预约</div>
-      <form class="msgForm" action="/plus/diy.php" enctype="multipart/form-data" method="post" onsubmit="return checkForm();">
-        <input type="hidden" name="action" value="post">
-        <input type="hidden" name="diyid" value="1">
-        <input type="hidden" name="do" value="2">
-        <li> <span>姓名</span>
-          <input class="login_input" name="name" type="text" id="name" placeholder="">
-        </li>
-        <li> <span>手机</span>
-          <input class="login_input" name="tel" type="text" id="tel" placeholder="">
-        </li>
-           <input type="hidden" name="dede_fields" value="name,text;tel,text;time,text;content,multitext">
-<input type="hidden" name="dede_fieldshash" value="e72417dba118d4f620ed8d23f41c3303">
-        <li>
-          <input class="login_btn submit" type="submit" value="提交">
-          <input class="login_btn reset" type="reset" value="重置">
-        </li>
-      </form>
-     <script type="text/javascript">
-            function checkForm()
-            {
-              if(document.getElementById('name').value.length == 0)
-              {
-                alert('姓名不能为空！');
-				document.getElementById('tel').focus();  
-                return false;
-              }
-              if(document.getElementById('tel').value.length == 0)
-              {
-                alert('手机不能为空！');
-				document.getElementById('tel').focus();  
-                return false;
-              }
-              var myreg = /^1(3|4|5|7|8)\d{9}$/;
-        if(!myreg.test(document.getElementById('tel').value))
-        {
-            alert('请输入有效的手机号码！');
-            document.getElementById('tel').focus();
-            return false;
-        }
-              return true;
-            }
-          </script>
-    </ul>
-  </div>
-</div>
+<!--  <div class="content">-->
+<!--    <p class="red_alert"></p>-->
+<!--    <ul class="login">-->
+<!--      <div class="head_title">数量有限，在线预约</div>-->
+<!--      <form class="msgForm" action="/plus/diy.php" enctype="multipart/form-data" method="post" onsubmit="return checkForm();">-->
+<!--        <input type="hidden" name="action" value="post">-->
+<!--        <input type="hidden" name="diyid" value="1">-->
+<!--        <input type="hidden" name="do" value="2">-->
+<!--        <li> <span>姓名</span>-->
+<!--          <input class="login_input" name="name" type="text" id="name" placeholder="">-->
+<!--        </li>-->
+<!--        <li> <span>手机</span>-->
+<!--          <input class="login_input" name="tel" type="text" id="tel" placeholder="">-->
+<!--        </li>-->
+<!--           <input type="hidden" name="dede_fields" value="name,text;tel,text;time,text;content,multitext">-->
+<!--<input type="hidden" name="dede_fieldshash" value="e72417dba118d4f620ed8d23f41c3303">-->
+<!--        <li>-->
+<!--          <input class="login_btn submit" type="submit" value="提交">-->
+<!--          <input class="login_btn reset" type="reset" value="重置">-->
+<!--        </li>-->
+<!--      </form>-->
+<!--     <script type="text/javascript">-->
+<!--            function checkForm()-->
+<!--            {-->
+<!--              if(document.getElementById('name').value.length == 0)-->
+<!--              {-->
+<!--                alert('姓名不能为空！');-->
+<!--				document.getElementById('tel').focus();  -->
+<!--                return false;-->
+<!--              }-->
+<!--              if(document.getElementById('tel').value.length == 0)-->
+<!--              {-->
+<!--                alert('手机不能为空！');-->
+<!--				document.getElementById('tel').focus();  -->
+<!--                return false;-->
+<!--              }-->
+<!--              var myreg = /^1(3|4|5|7|8)\d{9}$/;-->
+<!--        if(!myreg.test(document.getElementById('tel').value))-->
+<!--        {-->
+<!--            alert('请输入有效的手机号码！');-->
+<!--            document.getElementById('tel').focus();-->
+<!--            return false;-->
+<!--        }-->
+<!--              return true;-->
+<!--            }-->
+<!--          </script>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</div>-->
 <div class="clear"></div>
 <div class="hot_c ipro">
   <div class="head_b"><img src="/Test1/1982/skin/images/pro-header.jpg" alt=""></div>
