@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://www.luogu.com.cn/contest/48456#description -->
+<html class="no-js" lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04 Div.2 - 洛谷 | 计算机科学教育新生态</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+        <meta name="csrf-token" content="1630164476:/L7s4AN1I1DbvZMoGoa8Hn1qaf6I3wcOVbCZXdifMTs=">
+        <meta http-equiv="Content-Security-Policy" content="default-src &#39;unsafe-inline&#39; luogu.com.cn *.luogu.com.cn luogu.org *.luogu.org *.cnzz.com luoguprivate.oss-cn-hangzhou.aliyuncs.com luogu.oss-cn-hangzhou.aliyuncs.com wss: blob:; img-src * data:; font-src * data:; frame-src https://player.bilibili.com https://www.bilibili.com">
+        <style type="text/css">svg:not(:root).svg-inline--fa {
+  overflow: visible;
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.225em;
+}
+.svg-inline--fa.fa-w-1 {
+  width: 0.0625em;
+}
+.svg-inline--fa.fa-w-2 {
+  width: 0.125em;
+}
+.svg-inline--fa.fa-w-3 {
+  width: 0.1875em;
+}
+.svg-inline--fa.fa-w-4 {
+  width: 0.25em;
+}
+.svg-inline--fa.fa-w-5 {
+  width: 0.3125em;
+}
+.svg-inline--fa.fa-w-6 {
+  width: 0.375em;
+}
+.svg-inline--fa.fa-w-7 {
+  width: 0.4375em;
+}
+.svg-inline--fa.fa-w-8 {
+  width: 0.5em;
+}
+.svg-inline--fa.fa-w-9 {
+  width: 0.5625em;
+}
+.svg-inline--fa.fa-w-10 {
+  width: 0.625em;
+}
+.svg-inline--fa.fa-w-11 {
+  width: 0.6875em;
+}
+.svg-inline--fa.fa-w-12 {
+  width: 0.75em;
+}
+.svg-inline--fa.fa-w-13 {
+  width: 0.8125em;
+}
+.svg-inline--fa.fa-w-14 {
+  width: 0.875em;
+}
+.svg-inline--fa.fa-w-15 {
+  width: 0.9375em;
+}
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
+}
+.svg-inline--fa.fa-w-17 {
+  width: 1.0625em;
+}
+.svg-inline--fa.fa-w-18 {
+  width: 1.125em;
+}
+.svg-inline--fa.fa-w-19 {
+  width: 1.1875em;
+}
+.svg-inline--fa.fa-w-20 {
+  width: 1.25em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-border {
+  height: 1.5em;
+}
+.svg-inline--fa.fa-li {
+  width: 2em;
+}
+.svg-inline--fa.fa-fw {
+  width: 1.25em;
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: #ff253a;
+  border-radius: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  height: 1.5em;
+  line-height: 1;
+  max-width: 5em;
+  min-width: 1.5em;
+  overflow: hidden;
+  padding: 0.25em;
+  right: 0;
+  text-overflow: ellipsis;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: 0;
+  right: 0;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: 0;
+  left: 0;
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  right: 0;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: 0;
+  right: auto;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-lg {
+  font-size: 1.3333333333em;
+  line-height: 0.75em;
+  vertical-align: -0.0667em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: 2.5em;
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: -2em;
+  position: absolute;
+  text-align: center;
+  width: 2em;
+  line-height: inherit;
+}
+
+.fa-border {
+  border: solid 0.08em #eee;
+  border-radius: 0.1em;
+  padding: 0.2em 0.25em 0.15em;
+}
+
+.fa-pull-left {
+  float: left;
+}
+
+.fa-pull-right {
+  float: right;
+}
+
+.fa.fa-pull-left,
+.fas.fa-pull-left,
+.far.fa-pull-left,
+.fal.fa-pull-left,
+.fab.fa-pull-left {
+  margin-right: 0.3em;
+}
+.fa.fa-pull-right,
+.fas.fa-pull-right,
+.far.fa-pull-right,
+.fal.fa-pull-right,
+.fab.fa-pull-right {
+  margin-left: 0.3em;
+}
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+          animation: fa-spin 2s infinite linear;
+}
+
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+          animation: fa-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical,
+:root .fa-flip-both {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: #fff;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse {
+  color: #fff;
+}</style><link rel="shortcut icon" type="image/x-icon" href="https://www.luogu.com.cn/favicon.ico" media="screen">
+    <link rel="stylesheet" href="./【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04 Div.2 - 洛谷 _ 计算机科学教育新生态_files/loader.css">
+    <script type="text/javascript" async="" charset="utf-8" src="./【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04 Div.2 - 洛谷 _ 计算机科学教育新生态_files/core.php"></script><script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentTemplate%22%3A%22ContestShow%22%2C%22currentData%22%3A%7B%22contest%22%3A%7B%22description%22%3A%22%23%23%20%5Cu7b80%5Cu4ecb%5Cr%5Cn%5Cr%5Cn%5Cu672c%5Cu573a%5Cu6bd4%5Cu8d5b%5Cu4e3a%5Cu3010LGR-088%5Cu3011%5Cu6d1b%5Cu8c37%208%20%5Cu6708%5Cu6708%5Cu8d5b%20%26%20%5Cu300cPMOI%5Cu300dRound%20%5Cu00b7%2004%5Cuff0c%5Cu7b80%5Cu79f0%20LGR-088%20%26%20PMOI%20R4%5Cu3002%5Cr%5Cn%5Cr%5Cn%5Cu672c%5Cu573a%5Cu6bd4%5Cu8d5b%5Cu65f6%5Cu95f4%5Cu4e3a%202021%20%5Cu5e74%208%20%5Cu6708%2020%20%5Cu65e5%5Cu661f%5Cu671f%5Cu4e94%5Cuff0c%5Cu4e0b%5Cu5348%2014%3A00%20~%2018%3A00%5Cu3002%5Cr%5Cn%5Cr%5Cn%5Cu672c%5Cu573a%5Cu6bd4%5Cu8d5b%5Cu5206%20Div%20%5Cu8fdb%5Cu884c%5Cu3002Div.1%20%5Cu504f%5Cu96be%5Cuff0cDiv.2%20%5Cu8f83%5Cu7b80%5Cu5355%5Cu3002%5Cr%5Cn%5Cr%5Cn%5Cu672c%5Cu573a%5Cu6bd4%5Cu8d5b%5Cu5de5%5Cu4f5c%5Cu4eba%5Cu5458%5Cuff1a%5Cr%5Cn%5Cr%5Cn%5Cu51fa%5Cu9898%5Cu4eba%5Cuff1a%5Blnlhm%5D%28https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fuser%5C%2F179871%29%5Cuff0c%5Blndjy%5D%28https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fuser%5C%2F196899%29%5Cuff0c%5Bducati%5D%28https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fuser%5C%2F87064%29%5Cuff0c%5BSilver187%5D%28https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fuser%5C%2F154560%29%5Cuff0c%5Bnoip%5D%28https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fuser%5C%2F3296%29%5Cu3002%20%20%5Cr%5Cn%5Cu9a8c%5Cu9898%5Cu4eba%5Cuff1a%5Bducati%5D%28https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fuser%5C%2F87064%29%5Cuff0c%5BSilver187%5D%28https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fuser%5C%2F154560%29%5Cuff0c%5Blndjy%5D%28https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fuser%5C%2F196899%29%5Cuff0c%5Bb6e0%5D%28https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fuser%5C%2F150522%29%5Cuff0c%5Bwxy_%5D%28https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fuser%5C%2F317459%29%5Cuff0c%5Blnlhm%5D%28https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fuser%5C%2F179871%29%5Cuff0c%5Bpocafup%5D%28https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fuser%5C%2F219099%29%5Cu3002%20%20%5Cr%5Cn%5Cu5ba1%5Cu9898%5Cu4eba%5Cuff1a%5B_sys%5D%28%5C%2Fuser%5C%2F49093%29%5Cu3002%20%20%5Cr%5Cn%5Cu603b%5Cu8d1f%5Cu8d23%5Cu4eba%5Cuff1a%5Blndjy%5D%28https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fuser%5C%2F196899%29%5Cu3002%5Cr%5Cn%5Cr%5Cn%5Cr%5Cn%7C%20%5Cu7f16%5Cu53f7%20%7C%20%5Cu540d%5Cu79f0%20%7C%20%5Cu7c7b%5Cu578b%20%7C%20%5Cu51fa%5Cu9898%5Cu4eba%20%7C%20%5Cu9a8c%5Cu9898%5Cu4eba%20%7C%20%5Cr%5Cn%7C%3A-%3A%7C%3A-%3A%7C%3A-%3A%7C%3A-%3A%7C%3A-%3A%7C%5Cr%5Cn%7C%20A%20%7C%20%5Cu4eba%5Cu8d62%20%7C%20%5Cu4f20%5Cu7edf%20%7C%20lnlhm%20%7C%20lndjy%20%7C%20%5Cr%5Cn%7C%20B%20%7C%20%5Cu751f%5Cu6210%5Cu6811%20%7C%20%5Cu4f20%5Cu7edf%20%7C%20lndjy%20%7C%20ducati%20%7C%20%5Cr%5Cn%7C%20C%20%7C%20%5Cu53ef%5Cu601c%5Cu7684%5Cu56e2%5Cu4e3b%20%7C%20%5Cu4f20%5Cu7edf%20%7C%20ducati%20%7C%20b6e0%20%7C%20%5Cr%5Cn%7C%20D%20%7C%20%5Cu731c%5Cu6392%5Cu5217%20%7C%20%5Cu4ea4%5Cu4e92%20%7C%20Silver187%20%7C%20ducati%20%7C%20%5Cr%5Cn%7C%20E%20%7C%20%5Cu6392%5Cu5217%5Cu53d8%5Cu6362%20%7C%20%5Cu4f20%5Cu7edf%20%7C%20ducati%20%7C%20Silver187%20%7C%20%5Cr%5Cn%7C%20F%20%7C%20%5BYnoi2007%5DTB5x%20%7C%20%5Cu4ea4%5Cu4e92%20%7C%20noip%20%7C%20noip%20%7C%5Cr%5Cn%5Cr%5CnPMOI%20%5Cu5386%5Cu7ecf%204%20%5Cu4e2a%5Cu6708%5Cu7684%5Cu7cbe%5Cu5fc3%5Cu51c6%5Cu5907%5Cuff0c%5Cu4ee5%5Cu6708%5Cu8d5b%5Cu7684%5Cu5f62%5Cu5f0f%5Cu518d%5Cu6b21%5Cu4e0e%5Cu5927%5Cu5bb6%5Cu89c1%5Cu9762%5Cuff0c~~%5Cu867d%5Cu8bf4%5Cu5ba1%5Cu6838%5Cu6bd4%5Cu8d5b%5Cu65f6%5Cu51fa%5Cu4e86%5Cu4e00%5Cu4e9b%5Cu5c0f%5Cu63d2%5Cu66f2~~%5Cuff0c%5Cu4f46%5Cu6bd4%5Cu8d5b%5Cu7684%5Cu8d28%5Cu91cf%5Cu8f83%5Cu4ee5%5Cu5f80%5Cu4e5f%5Cu6709%5Cu4e86%5Cu5927%5Cu5e45%5Cu7684%5Cu63d0%5Cu5347%5Cu3002%5Cr%5Cn%5Cr%5Cn%23%23%20%5Cu77e5%5Cu4e4e%5Cu8bc4%5Cu4ef7%5Cu901a%5Cu9053%5Cr%5Cn%5Cr%5Cn%3Chttp%3A%5C%2F%5C%2Fwww.zhihu.com%5C%2Fquestion%5C%2F476730275%3E%5Cr%5Cn%5Cr%5Cn%23%23%20%5Cu5956%5Cu54c1%5Cr%5Cn%5Cr%5CnDiv.1%20%5Cu524d%203%20%5Cu540d%5Cu53ef%5Cu4ee5%5Cu83b7%5Cu5f97%5Cu968f%5Cu673a%5Cu9898%5Cu6750%5Cu672c%5Cu5b50%5Cu4e00%5Cu672c%5Cuff0c%5Cu5927%5Cu9646%5Cu5730%5Cu533a%5Cu5305%5Cu90ae%5Cu30023%20%5Cu4e2a%5Cu6708%5Cu5185%5Cu83b7%5Cu5f97%5Cu8fc7%5Cu5956%5Cu54c1%5Cu7684%5Cu4f18%5Cu79c0%5Cu9009%5Cu624b%5Cu4e0d%5Cu518d%5Cu91cd%5Cu590d%5Cu9881%5Cu5956%5Cuff0c%5Cu8d44%5Cu683c%5Cu987a%5Cu5ef6%5Cu3002%5Cr%5Cn%5Cr%5Cn%23%23%20%5Cu76f4%5Cu64ad%5Cu8bb2%5Cu89e3%5Cr%5Cn%5Cr%5Cn%5Cu6bd4%5Cu8d5b%5Cu8d5b%5Cu540e%5Cu5c06%5Cu63d0%5Cu4f9b%5Cu76f4%5Cu64ad%5Cu89c6%5Cu9891%5Cu8bb2%5Cu89e3%5Cuff0c%5Cu4e3b%5Cu8bb2%5Cu4eba%20%5Bducati%5D%28https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fuser%5C%2F87064%29%5Cu3001%5Blnlhm%5D%28https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fuser%5C%2F179871%29%5Cu3001%5Bnoip%5D%28https%3A%5C%2F%5C%2Fwww.luogu.com.cn%5C%2Fuser%5C%2F3296%29%5Cu3002%5Cr%5Cn%5Cr%5Cn%2A%2A%5Cu65f6%5Cu95f4%5Cuff1a8%20%5Cu6708%2020%20%5Cu65e5%5Cuff08%5Cu6bd4%5Cu8d5b%5Cu5f53%5Cu65e5%5Cuff0919%20%5Cu65f6%5Cu3002%2A%2A%5Cr%5Cn%5Cr%5Cn%5Cu4e0a%5Cu8f66%5Cu9700%5Cu4e70%5Cu7968%5Cuff0c%5Cu7968%5Cu4ef7%2010%20%5Cu5143%5Cu3002%5Cu5982%5Cu679c%5Cu9519%5Cu8fc7%5Cu76f4%5Cu64ad%5Cu8bb2%5Cu89e3%5Cu4e5f%5Cu6ca1%5Cu5173%5Cu7cfb%5Cuff0c%5Cu4e70%5Cu7968%5Cu4e0a%5Cu8f66%5Cu540e%5Cuff0c%5Cu4f9d%5Cu7136%5Cu53ef%5Cu4ee5%5Cu89c2%5Cu770b%5Cu56de%5Cu653e%5Cu3002%5Cr%5Cn%5Cr%5Cn%5Cu9898%5Cu89e3%5Cu5728%5Cu6bd4%5Cu8d5b%5Cu7ed3%5Cu675f%5Cu540e%5Cu5411%5Cu62a5%5Cu540d%5Cu8bb2%5Cu8bc4%5Cu7684%5Cu540c%5Cu5b66%5Cu5148%5Cu884c%5Cu516c%5Cu5f00%5Cuff0c%5Cu9898%5Cu89e3%5Cu901a%5Cu9053%5Cu5c06%5Cu4e8e%5Cu8d5b%5Cu540e%203%20%5Cu65e5%5Cu5f00%5Cu653e%5Cu3002%5Cr%5Cn%5Cr%5Cn%2A%2A%5Cu8d2d%5Cu7968%5Cu4e0a%5Cu8f66%5C%2F%5Cu89c2%5Cu770b%5Cu8bb2%5Cu8bc4%5Cu5730%5Cu5740%5Cuff1a%3Chttps%3A%5C%2F%5C%2Fclass.luogu.com.cn%5C%2Fcourse%5C%2Flgr88%3E%5Cu3002%2A%2A%5Cr%5Cn%5Cr%5Cn%23%23%20%5Cu63d0%5Cu793a%5Cr%5Cn%5Cr%5Cn1.%20%2A%2A%5Cu672c%5Cu573a%5Cu6bd4%5Cu8d5b%5Cu6709%206%20%5Cu9053%5Cu9898%5Cu76ee%2A%2A%5Cuff0c%5Cu4e3a%20IOI%20%5Cu8d5b%5Cu5236%5Cuff0c%2A%2AIOI%20%5Cu8d5b%5Cu5236%5Cu4ee5%5Cu6700%5Cu540e%5Cu4e00%5Cu6b21%5Cu63d0%5Cu4ea4%5Cu4e3a%5Cu51c6%2A%2A%5Cu3002%5Cr%5Cn%5Cr%5Cn2.%20%5Cu672c%5Cu6b21%5Cu6bd4%5Cu8d5b%2A%2A%5Cu8ba1%5Cu5165%20Rating%2A%2A%5Cuff0c%5Cu6839%5Cu636e%5Cu6bd4%5Cu8d5b%5Cu6210%5Cu7ee9%5Cu8fdb%5Cu884c%5Cu79ef%5Cu5206%5Cuff0c%5Cu5f71%5Cu54cd%5Cu5495%5Cu503c%5Cu3002%5Cu540c%5Cu65f6%5Cu53c2%5Cu52a0%5Cu4e24%5Cu4e2a%20Div%20%5Cu7684%5Cu9009%5Cu624b%5Cuff0c%5Cu53ea%5Cu8ba1%5Cu7b97%5Cu5176%5Cu4e2d%2A%2A%5Cu76f8%5Cu5bf9%5Cu6392%5Cu540d%5Cu8f83%5Cu9ad8%2A%2A%5Cu7684%5Cu4e00%5Cu573a%5Cu7684%20Rating%5Cu3002%2A%2A%5Cu4e0d%5Cu4f1a%5Cu56e0%5Cu4e3a%5Cu53c2%5Cu52a0%5Cu6bd4%5Cu8d5b%5Cu800c%5Cu964d%20Rating%2A%2A%5Cuff0c%5Cu8bf7%5Cu653e%5Cu5fc3%5Cu53c2%5Cu52a0%5Cu3002%5Cr%5Cn%5Cr%5Cn3.%20%5Cu4e25%5Cu7981%5Cu5f00%5Cu5c0f%5Cu53f7%5C%2F%5Cu548c%5Cu4ed6%5Cu4eba%5Cu5206%5Cu4eab%5Cu7b54%5Cu6848%5Cu4ee5%5Cu8fbe%5Cu6210%5Cu4efb%5Cu4f55%5Cu76ee%5Cu7684%5Cuff0c%5Cu6216%5Cu8005%5Cu76f4%5Cu63a5%5Cu5957%5Cu7528%5Cu975e%5Cu672c%5Cu4eba%5Cu7f16%5Cu5199%5Cu7684%5Cu4ee3%5Cu7801%5Cu3002%5Cu672c%5Cu6b21%5Cu6bd4%5Cu8d5b%5Cu5c06%2A%2A%5Cu4f7f%5Cu7528%5Cu53cd%5Cu4f5c%5Cu5f0a%5Cu7cfb%5Cu7edf%2A%2A%5Cuff0c%5Cu56e0%5Cu4e3a%5Cu4efb%5Cu4f55%5Cu539f%5Cu56e0%5Cu88ab%5Cu53cd%5Cu4f5c%5Cu5f0a%5Cu7cfb%5Cu7edf%5Cu53d1%5Cu73b0%5Cuff08%5Cu5305%5Cu62ec%5Cu591a%5Cu4eba%5Cu5957%5Cu7528%5Cu540c%5Cu4e00%5Cu4e2a%5Cu4e92%5Cu8054%5Cu7f51%5Cu516c%5Cu5f00%5Cu7684%5Cu4ee3%5Cu7801%5Cuff09%5Cu3001%5Cu88ab%5Cu4e3e%5Cu62a5%5Cu6216%5Cu5728%5Cu62bd%5Cu67e5%5Cu4ee3%5Cu7801%5Cu662f%5Cu53d1%5Cu73b0%5Cu9009%5Cu624b%5Cu6709%5Cu5f71%5Cu54cd%5Cu6bd4%5Cu8d5b%5Cu6210%5Cu7ee9%5Cu516c%5Cu5e73%5Cu6027%5Cu7684%5Cu884c%5Cu4e3a%5Cuff0c%5Cu89c6%5Cu60c5%5Cu8282%5Cu4e25%5Cu91cd%5Cu6027%5Cu7ed9%5Cu4e88%5Cu53d6%5Cu6d88%5Cu6210%5Cu7ee9%5Cu3001%5Cu8b66%5Cu544a%5Cu6027%5Cu68d5%5Cu540d%5Cu6216%5Cu8005%5Cu5c01%5Cu53f7%5Cu7684%5Cu5904%5Cu7f5a%5Cu3002%5Cr%5Cn%5Cr%5Cn%5Cr%5Cn4.%20%5Cu5982%5Cu679c%5Cu53d1%5Cu73b0%5Cu6bd4%5Cu8d5b%5Cu6709%5Cu539f%5Cu9898%5Cu6216%5Cu5176%5Cu4ed6%5Cu5f71%5Cu54cd%5Cu516c%5Cu5e73%5Cu6027%5Cu7684%5Cu56e0%5Cu7d20%5Cuff0c%5Cu8bf7%5Cu79c1%5Cu804a%5Cu7ba1%5Cu7406%5Cu5458%5Cu548c%5Cu51fa%5Cu9898%5Cu4eba%5Cuff0c%5Cu800c%5Cu4e0d%5Cu8981%5Cu4ee5%5Cu4efb%5Cu4f55%5Cu65b9%5Cu5f0f%5Cu516c%5Cu5f00%5Cuff0c%5Cu8fdd%5Cu8005%5Cu89c6%5Cu5f71%5Cu54cd%5Cu53ef%5Cu80fd%5Cu4f1a%5Cu5f97%5Cu5230%5Cu8b66%5Cu544a%5Cu6027%5Cu68d5%5Cu540d%5Cu6216%5Cu7981%5Cu8a00%5Cu7684%5Cu60e9%5Cu7f5a%5Cu3002%5Cr%5Cn%5Cr%5Cn%23%23%20%5Cu5e7f%5Cu544a%5Cr%5Cn%5Cr%5Cn%5Cu867d%5Cu7136%20CSP%20%5Cu7b2c%5Cu4e00%5Cu8f6e%5Cuff08%5Cu521d%5Cu8d5b%5Cuff09%5Cu5bf9%5Cu5927%5Cu591a%5Cu6570%5Cu540c%5Cu5b66%5Cu6765%5Cu8bf4%5Cu90fd%5Cu4e0d%5Cu662f%5Cu4e8b%5Cuff0c%5Cu4f46%5Cu5982%5Cu679c%5Cu5bf9%5Cu5373%5Cu5c06%5Cu5230%5Cu6765%5Cu7684%5Cu7b2c%5Cu4e00%5Cu8f6e%5Cu611f%5Cu5230%5Cu62c5%5Cu5fc3%5Cuff0c%5Cu90a3%5Cu4e48%5Cu53ef%5Cu4ee5%5Cu62a5%5Cu540d%5Cu6d1b%5Cu8c37%5Cu521d%5Cu8d5b%5Cu8f85%5Cu5bfc%5Cu8bfe%5Cu7a0b%5Cu8fdb%5Cu884c%5Cu77e5%5Cu8bc6%5Cu70b9%5Cu7684%5Cu68b3%5Cu7406%5Cuff0c%5Cu5e76%5Cu6a21%5Cu62df%5Cu8d5b%5Cu67e5%5Cu7f3a%5Cu8865%5Cu6f0f%5Cu3002%5B%5Cu3010%5Cu70b9%5Cu51fb%5Cu67e5%5Cu770b%5Cu62a5%5Cu540d%3E%3E%5Cu3011%5D%28https%3A%5C%2F%5C%2Fclass.luogu.com.cn%5C%2Fcourse%5C%2Fyugu21acs%29%5Cr%5Cn%5Cr%5Cn%5B%21%5B%5D%28https%3A%5C%2F%5C%2Fcdn.luogu.com.cn%5C%2Fupload%5C%2Fimage_hosting%5C%2F7vosh5tt.png%29%5D%28https%3A%5C%2F%5C%2Fclass.luogu.com.cn%5C%2Fcourse%5C%2Fyugu21acs%29%22%2C%22totalParticipants%22%3A4029%2C%22canEdit%22%3Afalse%2C%22ruleType%22%3A4%2C%22visibilityType%22%3A1%2C%22invitationCodeType%22%3A1%2C%22rated%22%3Atrue%2C%22host%22%3A%7B%22id%22%3A1000%2C%22name%22%3A%22%5Cu6d1b%5Cu8c37%5Cu5b98%5Cu65b9%5Cu56e2%5Cu961f%22%2C%22isPremium%22%3Atrue%7D%2C%22problemCount%22%3A4%2C%22id%22%3A48456%2C%22name%22%3A%22%5Cu3010LGR-088%5Cu3011%5Cu6d1b%5Cu8c37%208%20%5Cu6708%5Cu6708%5Cu8d5b%20%26%20%5Cu300cPMOI%5Cu300dRound%20%5Cu00b7%2004%20Div.2%22%2C%22startTime%22%3A1629439200%2C%22endTime%22%3A1629453600%7D%2C%22contestProblems%22%3A%5B%7B%22score%22%3A100%2C%22problem%22%3A%7B%22pid%22%3A%22P7840%22%2C%22title%22%3A%22%5Cu300cPMOI-4%5Cu300d%5Cu4eba%5Cu8d62%22%2C%22difficulty%22%3A2%2C%22fullScore%22%3A200%2C%22type%22%3A%22P%22%7D%7D%2C%7B%22score%22%3A100%2C%22problem%22%3A%7B%22pid%22%3A%22P7841%22%2C%22title%22%3A%22%5Cu300cPMOI-4%5Cu300d%5Cu751f%5Cu6210%5Cu6811%22%2C%22difficulty%22%3A3%2C%22fullScore%22%3A400%2C%22type%22%3A%22P%22%7D%7D%2C%7B%22score%22%3A100%2C%22problem%22%3A%7B%22pid%22%3A%22P7842%22%2C%22title%22%3A%22%5Cu300cPMOI-4%5Cu300d%5Cu53ef%5Cu601c%5Cu7684%5Cu56e2%5Cu4e3b%22%2C%22difficulty%22%3A5%2C%22fullScore%22%3A300%2C%22type%22%3A%22P%22%7D%7D%2C%7B%22score%22%3A100%2C%22problem%22%3A%7B%22pid%22%3A%22P7843%22%2C%22title%22%3A%22%5Cu300cPMOI-4%5Cu300d%5Cu731c%5Cu6392%5Cu5217%22%2C%22difficulty%22%3A5%2C%22fullScore%22%3A100%2C%22type%22%3A%22P%22%7D%7D%5D%2C%22isScoreboardFrozen%22%3Afalse%2C%22accessLevel%22%3A4%2C%22joined%22%3Afalse%7D%2C%22currentTitle%22%3A%22%5Cu3010LGR-088%5Cu3011%5Cu6d1b%5Cu8c37%208%20%5Cu6708%5Cu6708%5Cu8d5b%20%26%20%5Cu300cPMOI%5Cu300dRound%20%5Cu00b7%2004%20Div.2%20-%20%5Cu6bd4%5Cu8d5b%5Cu8be6%5Cu60c5%22%2C%22currentTheme%22%3Anull%7D"));window._feConfigVersion=1629860865;window._tagVersion=1630076639;</script>
+    <script src="./【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04 Div.2 - 洛谷 _ 计算机科学教育新生态_files/loader.js.下载" charset="utf-8" defer=""></script>
+<style type="text/css">._th-container ._th-item{margin-bottom:3px;position:relative;width:0;height:0;cursor:pointer;opacity:.3;background-color:aquamarine;border-radius:100%;text-align:center;line-height:30px;-webkit-transition:all .35s;-o-transition:all .35s;transition:all .35s;right:30px}._th-container ._th-item,._th-container ._th-click-hover,._th_cover-all-show-times ._th_times{-webkit-box-shadow:-3px 4px 12px -5px black;box-shadow:-3px 4px 12px -5px black}._th-container:hover ._th-item._item-x2{margin-left:18px;width:40px;height:40px;line-height:40px}._th-container:hover ._th-item._item-x-2{margin-left:17px;width:38px;height:38px;line-height:38px}._th-container:hover ._th-item._item-xx2{width:36px;height:36px;margin-left:16px;line-height:36px}._th-container:hover ._th-item._item-xx-2{width:32px;height:32px;line-height:32px;margin-left:14px}._th-container:hover ._th-item._item-reset{width:30px;line-height:30px;height:30px;margin-left:10px}._th-click-hover{position:relative;-webkit-transition:all .5s;-o-transition:all .5s;transition:all .5s;height:45px;width:45px;cursor:pointer;opacity:.3;border-radius:100%;background-color:aquamarine;text-align:center;line-height:45px;right:0}._th-container:hover{left:-5px}._th-container{font-size:12px;-webkit-transition:all .5s;-o-transition:all .5s;transition:all .5s;left:-35px;top:20%;position:fixed;-webkit-box-sizing:border-box;box-sizing:border-box;z-index:100000;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}._th-container ._th-item:hover{opacity:.8;background-color:#5fb492;color:aliceblue}._th-container ._th-item:active{opacity:.9;background-color:#1b3a26;color:aliceblue}._th-container:hover ._th-click-hover{opacity:.8}._th-container:hover ._th-item{opacity:.6;right:0}._th-container ._th-click-hover:hover{opacity:.8;background-color:#5fb492;color:aliceblue}._th_cover-all-show-times{position:fixed;top:0;right:0;width:100%;height:100%;z-index:99999;opacity:1;font-weight:900;font-size:30px;color:#4f4f4f;background-color:rgba(0,0,0,0.1)}._th_cover-all-show-times._th_hidden{z-index:-99999;opacity:0;-webkit-transition:1s all;-o-transition:1s all;transition:1s all}._th_cover-all-show-times ._th_times{width:300px;height:300px;border-radius:50%;background-color:rgba(127,255,212,0.51);text-align:center;line-height:300px;position:absolute;top:50%;right:50%;margin-top:-150px;margin-right:-150px}</style><style type="text/css">.lfe-tooltip-theme{display:block !important;z-index:10000}.lfe-tooltip-theme .tooltip-inner{background:#000;color:#fff;border-radius:4px;padding:5px 10px 4px}.lfe-tooltip-theme .tooltip-arrow{width:0;height:0;border-style:solid;position:absolute;margin:5px;border-color:#000;z-index:1}.lfe-tooltip-theme[x-placement^=top]{margin-bottom:5px}.lfe-tooltip-theme[x-placement^=top] .tooltip-arrow{border-width:5px 5px 0 5px;border-left-color:transparent !important;border-right-color:transparent !important;border-bottom-color:transparent !important;bottom:-5px;left:calc(50% - 5px);margin-top:0;margin-bottom:0}.lfe-tooltip-theme[x-placement^=bottom]{margin-top:5px}.lfe-tooltip-theme[x-placement^=bottom] .tooltip-arrow{border-width:0 5px 5px 5px;border-left-color:transparent !important;border-right-color:transparent !important;border-top-color:transparent !important;top:-5px;left:calc(50% - 5px);margin-top:0;margin-bottom:0}.lfe-tooltip-theme[x-placement^=right]{margin-left:5px}.lfe-tooltip-theme[x-placement^=right] .tooltip-arrow{border-width:5px 5px 5px 0;border-left-color:transparent !important;border-top-color:transparent !important;border-bottom-color:transparent !important;left:-5px;top:calc(50% - 5px);margin-left:0;margin-right:0}.lfe-tooltip-theme[x-placement^=left]{margin-right:5px}.lfe-tooltip-theme[x-placement^=left] .tooltip-arrow{border-width:5px 0 5px 5px;border-top-color:transparent !important;border-right-color:transparent !important;border-bottom-color:transparent !important;right:-5px;top:calc(50% - 5px);margin-left:0;margin-right:0}.lfe-tooltip-theme.popover .popover-inner{background:#f9f9f9;color:#000;padding:24px;border-radius:5px;box-shadow:0 5px 30px rgba(0,0,0,.1)}.lfe-tooltip-theme.popover .popover-arrow{border-color:#f9f9f9}.lfe-tooltip-theme[aria-hidden=true]{visibility:hidden;opacity:0;transition:opacity .15s,visibility .15s}.lfe-tooltip-theme[aria-hidden=false]{visibility:visible;opacity:1;transition:opacity .15s}</style><style type="text/css">.resize-observer[data-v-8859cc6c]{position:absolute;top:0;left:0;z-index:-1;width:100%;height:100%;border:none;background-color:transparent;pointer-events:none;display:block;overflow:hidden;opacity:0}.resize-observer[data-v-8859cc6c] object{display:block;position:absolute;top:0;left:0;height:100%;width:100%;overflow:hidden;pointer-events:none;z-index:-1}</style><style></style><style type="text/css">.top-progress[data-v-774e75a0]{position:fixed;right:0;left:0;height:4px;overflow:hidden;z-index:99}.bar[data-v-774e75a0]{height:100%;border-top-right-radius:2px;border-bottom-right-radius:2px;transition:width .2s ease;opacity:1;animation:loading-progress-data-v-774e75a0 10s cubic-bezier(.22,.86,0,.8);animation-fill-mode:forwards}.done[data-v-774e75a0]{animation:none;opacity:0;width:100%;transition:opacity .2s ease .2s}@keyframes loading-progress-data-v-774e75a0{from{width:5%}to{width:99%}}</style><style type="text/css">nav[data-v-27b2cd59]{position:fixed;width:3.7em;height:100%;display:flex;flex-direction:column;text-align:center;line-height:1.2;z-index:5}.logo-wrap[data-v-27b2cd59]{display:block;box-sizing:border-box;padding:1em;width:3.7em;text-align:center;height:4em;overflow:hidden;outline:0}.logo-wrap>img[data-v-27b2cd59]{max-width:100%;max-height:100%}.user-nav[data-v-27b2cd59]{display:none;height:3.4em;align-items:center;background:rgba(255,255,255,.5);border-radius:1em;margin:.3em;padding:0 .8em}</style><style type="text/css">a[data-v-cd9b963e]{display:block;padding:.5em .5em;text-decoration:none}.icon[data-v-cd9b963e]{text-align:center;margin:0 .3em;font-size:1.1em;display:inline-block;width:1.5em;vertical-align:middle}.text[data-v-cd9b963e]{font-size:.8em;vertical-align:middle}</style><style type="text/css">a[data-v-303bbf52]{text-decoration:none}a.color-none[data-v-303bbf52]:hover{text-decoration:none}.color-header[data-v-303bbf52]{color:#bbb}.color-header[data-v-303bbf52]:hover{color:#fff}.color-default[data-v-303bbf52],.color-default-noline[data-v-303bbf52]{color:#3498db}.color-default-noline[data-v-303bbf52]:hover,.color-default[data-v-303bbf52]:hover{color:#0056b3}a.color-default-noline[data-v-303bbf52]:hover{text-decoration:none}.color-title[data-v-303bbf52]{color:#666}.color-title[data-v-303bbf52]:hover{color:#5bc0de}</style><link rel="stylesheet" type="text/css" href="./【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04 Div.2 - 洛谷 _ 计算机科学教育新生态_files/module.213.ab6042fa4315a4e94036.css"><script charset="utf-8" src="./【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04 Div.2 - 洛谷 _ 计算机科学教育新生态_files/module.213.ab6042fa4315a4e94036.js.下载"></script><link rel="stylesheet" type="text/css" href="./【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04 Div.2 - 洛谷 _ 计算机科学教育新生态_files/module.168.d6e91ba553ca7edc088f.css"><script charset="utf-8" src="./【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04 Div.2 - 洛谷 _ 计算机科学教育新生态_files/module.168.d6e91ba553ca7edc088f.js.下载"></script><style type="text/css">.header[data-v-52820d90]{color:#fff}h1[data-v-52820d90]{margin-top:.5em;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.bread-crumb[data-v-52820d90]{padding-top:1.5em;font-size:.8em;color:#aaa}.user-nav[data-v-52820d90]{position:absolute;right:4em;top:0;padding:.5em 1em;color:#333;background-color:rgba(255,255,255,.5);border-bottom-left-radius:5px;border-bottom-right-radius:5px}.functional[data-v-52820d90]{padding-top:.8em}.operation[data-v-52820d90]{display:flex;align-items:baseline;color:#fff}.stat[data-v-52820d90]{float:right}@media (max-width:576px){.user-nav[data-v-52820d90]{display:none}.bread-crumb[data-v-52820d90]{font-size:.875em}.stat[data-v-52820d90]{float:left}.functional[data-v-52820d90]{display:flex;flex-direction:column;padding-top:0}.operation[data-v-52820d90]{margin-top:1em;margin-bottom:1em;display:flex;flex-direction:column}.operation>*[data-v-52820d90]{width:100%;margin-bottom:.5em}}</style><style type="text/css">nav[data-v-019a82aa]::after{content:" ";white-space:pre}.link[data-v-019a82aa],.text[data-v-019a82aa]{color:rgba(255,255,255,.75)}.link[data-v-019a82aa]:hover{color:#fff}</style><style type="text/css">.stat[data-v-83303c00]{display:inline-block}.field[data-v-83303c00]{display:inline-block;padding:0 .8em}.color-default>.field[data-v-83303c00]{color:#666;border-left:1px solid #ddd}.color-inverse>.field[data-v-83303c00]{color:#fff;border-left:1px solid #fff}.stat>.field[data-v-83303c00]:first-child{border-left:none}.key[data-v-83303c00],.value[data-v-83303c00]{display:block;text-align:center}.value[data-v-83303c00]{line-height:1.5;font-weight:700}@media (max-width:576px){.key[data-v-83303c00]{margin-left:.8em;font-weight:400}.value[data-v-83303c00]{margin-left:1em;font-weight:400;line-height:unset}.stat[data-v-83303c00]{float:none;display:flex;justify-content:flex-start;flex-wrap:wrap;flex-direction:row}.field[data-v-83303c00]{padding:0}.color-default>.field[data-v-83303c00],.color-inverse>.field[data-v-83303c00]{border-left:none;display:flex;flex-direction:row;padding:0;margin-bottom:.5em;min-width:50%}}</style><style type="text/css">.card[data-v-796309f8]{display:block;margin-bottom:1.3em;background-color:#fff;box-shadow:0 1px 3px rgba(26,26,26,.1);box-sizing:border-box}.padding-none[data-v-796309f8]{padding:0}.padding-default[data-v-796309f8]{padding:1.3em}</style><style type="text/css">ul[data-v-7092f3a4]{padding:0;margin:0;list-style:none;outline:0}.menu[data-v-7092f3a4]{display:flex;align-items:baseline}.menu[data-v-7092f3a4]:last-child{margin-bottom:0}.name[data-v-7092f3a4]{float:left;width:7em;font-weight:700}.items>li[data-v-7092f3a4]{display:inline-block;padding:.063em .5em;transition:.3s ease all;position:relative}.items>li[data-v-7092f3a4]:first-child{margin-left:0}.items>li>.entry[data-v-7092f3a4]{color:inherit;text-decoration:none;cursor:pointer;display:inline-block;padding:20px .5em}.items>li>.entry.selected[data-v-7092f3a4]{cursor:default;color:var(--main-color);background-color:transparent}.expand-item[data-badge][data-v-7092f3a4]::after,.items>li>.entry[data-badge][data-v-7092f3a4]::after{content:attr(data-badge);position:absolute;padding:0 .2em;font-size:.75em;border-radius:.6em;line-height:1;text-align:center;background-color:#e74c3c;color:#fff}.items>li>.entry[data-v-7092f3a4]::before{content:'';position:absolute;left:0;bottom:0;height:4px;transition:.233s ease all}.items>li>.entry[data-v-7092f3a4]:hover::before{margin:0;width:100%;background-color:var(--lfe-color--grey-3,#bfbfbf)}.items>li>.entry.selected[data-v-7092f3a4]::before{margin:0 .5em;width:calc(100% - 1em);background-color:var(--main-color)}.items>li>.entry.selected[data-v-7092f3a4]:hover::before{margin:0 0;width:100%;background-color:var(--main-color)}@media (max-width:576px){.items>li>.entry[data-v-7092f3a4]{padding:.5em .4em}.items>li>.entry[data-v-7092f3a4]::before{height:2px}}.expand-content[data-v-7092f3a4]{position:absolute;left:5px;top:55px;width:100%;background-color:#fff;border-radius:3px;border:1px solid #e8e8e8;box-shadow:0 1px 4px rgba(0,0,0,.15),inset 0 0 1px rgba(0,0,0,.5);z-index:99}.expand-content[data-v-7092f3a4]::after{position:absolute;top:-4px;left:calc(50% - 4px);content:"";border:4px solid #fff;transform:rotate(135deg);box-shadow:0 1px 4px rgba(0,0,0,.15),inset 0 0 1px rgba(0,0,0,.5);z-index:-1}.expand-content[data-v-7092f3a4]:hover{box-shadow:0 2px 4px rgba(137,209,245,.5),inset 0 0 1px rgba(0,0,0,.25)}.expand-content[data-v-7092f3a4]::after:hover{box-shadow:0 2px 4px rgba(137,209,245,.5),inset 0 0 1px rgba(0,0,0,.25)}.expand-item[data-v-7092f3a4]{padding:3px 12px;background-color:#fff;color:rgba(0,0,0,.65);font-size:.875em;cursor:pointer}.expand-item[data-v-7092f3a4]:hover{background-color:#fafafa}.expand-selected[data-v-7092f3a4]{font-weight:700;background-color:#fafafa;color:var(--main-color)}</style><style type="text/css">span[data-v-20b7d558]{display:inline-block;padding:0 8px;box-sizing:border-box;font-weight:400;line-height:1.5;border-radius:2px}</style><style type="text/css">.marked[data-v-5a58a989] h1{font-size:2em}.marked[data-v-5a58a989] h2{font-size:1.5em}.marked[data-v-5a58a989] h3{font-size:1.17em}.marked[data-v-5a58a989] h5{font-size:.83em}.marked[data-v-5a58a989] h6{font-size:.67em}.marked[data-v-5a58a989] img{max-width:100%}.marked[data-v-5a58a989] p{margin:1rem 0}.marked[data-v-5a58a989] h1,.marked[data-v-5a58a989] h2,.marked[data-v-5a58a989] h3,.marked[data-v-5a58a989] h4,.marked[data-v-5a58a989] h5,.marked[data-v-5a58a989] h6{margin:.5rem 0}.marked[data-v-5a58a989] h1,.marked[data-v-5a58a989] h2{padding-bottom:.2em;border-bottom:solid 1px #eee}.marked[data-v-5a58a989] ol,.marked[data-v-5a58a989] ul{padding-left:1.5em}.marked[data-v-5a58a989] ul{list-style:outside disc}.marked[data-v-5a58a989] ol{list-style:outside decimal}.marked[data-v-5a58a989] hr{margin:1em 0;height:0;border:none;border-bottom:solid 1px #eee}.marked[data-v-5a58a989] code,.marked[data-v-5a58a989] pre{font-family:monospace;font-size:.875em;background-color:#fafafa;border:1px solid #e8e8e8;border-radius:2px}.marked[data-v-5a58a989] code{margin:0 .2em;padding:.1em .2em;white-space:nowrap;tab-size:4;-moz-tab-size:4}.marked[data-v-5a58a989] pre{margin:0;padding:1em;overflow-y:auto}.marked[data-v-5a58a989] pre>code{font-size:unset;margin:0;padding:0;white-space:pre;border:none}.marked[data-v-5a58a989] li code.hljs,.marked[data-v-5a58a989] p code.hljs{display:inline}</style><style type="text/css">button[data-v-86f36770]{display:inline-block;flex:none;outline:0;cursor:pointer;color:#fff;font-weight:inherit;line-height:1.5;text-align:center;vertical-align:middle;background:0 0;border-radius:3px;border:2px solid}button[data-v-86f36770]:disabled{opacity:.65;cursor:not-allowed}button[data-v-86f36770]:hover{opacity:.85}</style><style type="text/css">nav[data-v-3e63dd22]{position:fixed;width:80%;height:100%;display:flex;flex-direction:column;text-align:left;line-height:1.2;background-color:#fafafa;transition:transform .2s ease;z-index:1010}.switch-btn[data-v-3e63dd22]{display:inline-flex;position:fixed;right:4em;bottom:4em;width:3em;height:3em;border-radius:50%;background:#eee;z-index:1008;cursor:pointer;box-shadow:#777 0 0 5px;align-items:center;justify-content:center}.switch-btn>i[data-v-3e63dd22]{width:100%;height:100%;text-align:center;line-height:1.8em;font-size:1.8em;color:#555}.exit-wrap[data-v-3e63dd22]{position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.5);z-index:1009}.nav-items[data-v-3e63dd22]{overflow-y:auto;margin-bottom:40px}nav.hidden[data-v-3e63dd22]{transform:translateX(-100%)}</style><style type="text/css">.nav-item[data-v-0bfdceda]{position:relative}a[data-v-0bfdceda]{display:block;padding:.5em .5em;text-decoration:none}.icon[data-v-0bfdceda]{text-align:center;margin:0 .3em;font-size:1.25em;display:inline-block;width:1.5em;vertical-align:middle}.text[data-v-0bfdceda]{font-size:1.25em;vertical-align:middle}.dropdown[data-v-0bfdceda]{position:absolute;right:12px;top:.5em}.sub-content[data-v-0bfdceda]{margin-left:1em;font-size:.875em}</style></head>
+<body>
+<div data-v-90bffe18="" id="app" class="lfe-vars"><div data-v-774e75a0="" data-v-90bffe18="" class="top-progress"><div data-v-774e75a0="" class="bar done" style="background: rgb(52, 152, 219);"></div></div> <div data-v-3e63dd22="" data-v-1316252e="" data-v-90bffe18="" logoimage="https://cdn.luogu.com.cn/fe/logo-single.png?0a231b572e3eb12887faedad7d00e829" logolink="/" logobackgroundcolor="rgba(52, 152, 219, 1)" backgroundcolor="rgba(52, 73, 94, 1)" color="#ddd" class="lfe-body"><nav data-v-3e63dd22="" class="hidden"><div data-v-1afefb48="" data-v-1316252e="" class="mobile-nav-container" data-v-3e63dd22=""><nav data-v-1afefb48="" class="nav-container"><div data-v-1afefb48="" class="avatar-top"><img data-v-1afefb48="" src="./【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04 Div.2 - 洛谷 _ 计算机科学教育新生态_files/1.png" class="avatar"></div> <div data-v-1afefb48="" class="user-action"><a data-v-303bbf52="" data-v-1afefb48="" href="https://www.luogu.com.cn/auth/login" class="login color-none"><span data-v-1afefb48="">登录</span></a> <a data-v-303bbf52="" data-v-1afefb48="" href="https://www.luogu.com.cn/auth/register" class="login color-none"><span data-v-1afefb48="">注册</span></a></div></nav></div> <div data-v-3e63dd22="" class="nav-items"> <div data-v-0bfdceda="" data-v-1316252e="" class="nav-item" data-v-3e63dd22="" style="background-color: transparent;"><a data-v-303bbf52="" data-v-0bfdceda="" href="https://www.luogu.com.cn/" colorscheme="none" class="color-none" style="color: inherit;"><span data-v-0bfdceda="" data-v-303bbf52="" class="icon"><svg data-v-0bfdceda="" data-v-303bbf52="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-home fa-w-18"><path data-v-0bfdceda="" data-v-303bbf52="" fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z" class=""></path></svg></span> <span data-v-0bfdceda="" data-v-303bbf52="" class="text"><span data-v-1316252e="" data-v-303bbf52="">首页</span></span> <!----></a> <!----></div> <!----> <div data-v-0bfdceda="" data-v-1316252e="" class="nav-item" data-v-3e63dd22="" style="background-color: transparent;"><a data-v-303bbf52="" data-v-0bfdceda="" href="javascript:void 0" colorscheme="none" class="color-none" style="color: inherit;"><span data-v-0bfdceda="" data-v-303bbf52="" class="icon"><svg data-v-0bfdceda="" data-v-303bbf52="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="toolbox" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-toolbox fa-w-16"><path data-v-0bfdceda="" data-v-303bbf52="" fill="currentColor" d="M502.63 214.63l-45.25-45.25c-6-6-14.14-9.37-22.63-9.37H384V80c0-26.51-21.49-48-48-48H176c-26.51 0-48 21.49-48 48v80H77.25c-8.49 0-16.62 3.37-22.63 9.37L9.37 214.63c-6 6-9.37 14.14-9.37 22.63V320h128v-16c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v16h128v-16c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v16h128v-82.75c0-8.48-3.37-16.62-9.37-22.62zM320 160H192V96h128v64zm64 208c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-16H192v16c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-16H0v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96H384v16z" class=""></path></svg></span> <span data-v-0bfdceda="" data-v-303bbf52="" class="text"><span data-v-1316252e="" data-v-303bbf52="">应用</span></span> <span data-v-0bfdceda="" data-v-303bbf52="" class="dropdown"><svg data-v-0bfdceda="" data-v-303bbf52="" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-chevron-down fa-w-14"><path data-v-0bfdceda="" data-v-303bbf52="" fill="currentColor" d="M443.5 162.6l-7.1-7.1c-4.7-4.7-12.3-4.7-17 0L224 351 28.5 155.5c-4.7-4.7-12.3-4.7-17 0l-7.1 7.1c-4.7 4.7-4.7 12.3 0 17l211 211.1c4.7 4.7 12.3 4.7 17 0l211-211.1c4.8-4.7 4.8-12.3.1-17z" class=""></path></svg></span></a> <div data-v-0bfdceda="" class="sub-content" style="display: none;"><div data-v-0bfdceda="" data-v-1316252e="" class="nav-item" color-scheme="none" style="background-color: transparent;"><a data-v-303bbf52="" data-v-0bfdceda="" href="https://www.luogu.com.cn/theme/list" class="color-none" style="color: inherit;"><span data-v-0bfdceda="" class="icon"><svg data-v-0bfdceda="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="brush" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-brush fa-w-12"><path data-v-0bfdceda="" fill="currentColor" d="M352 0H32C14.33 0 0 14.33 0 32v224h384V32c0-17.67-14.33-32-32-32zM0 320c0 35.35 28.66 64 64 64h64v64c0 35.35 28.66 64 64 64s64-28.65 64-64v-64h64c35.34 0 64-28.65 64-64v-32H0v32zm192 104c13.25 0 24 10.74 24 24 0 13.25-10.75 24-24 24s-24-10.75-24-24c0-13.26 10.75-24 24-24z" class=""></path></svg></span> <span data-v-0bfdceda="" class="text"><span data-v-1316252e="">主题商店</span></span> <!----></a> <!----></div> <div data-v-0bfdceda="" data-v-1316252e="" class="nav-item" color-scheme="none" style="background-color: transparent;"><a data-v-303bbf52="" data-v-0bfdceda="" href="https://www.luogu.com.cn/image" class="color-none" style="color: inherit;"><span data-v-0bfdceda="" class="icon"><svg data-v-0bfdceda="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cloud-upload-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svg-inline--fa fa-cloud-upload-alt fa-w-20"><path data-v-0bfdceda="" fill="currentColor" d="M537.6 226.6c4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4zM393.4 288H328v112c0 8.8-7.2 16-16 16h-48c-8.8 0-16-7.2-16-16V288h-65.4c-14.3 0-21.4-17.2-11.3-27.3l105.4-105.4c6.2-6.2 16.4-6.2 22.6 0l105.4 105.4c10.1 10.1 2.9 27.3-11.3 27.3z" class=""></path></svg></span> <span data-v-0bfdceda="" class="text"><span data-v-1316252e="">图片上传</span></span> <!----></a> <!----></div> <div data-v-0bfdceda="" data-v-1316252e="" class="nav-item" color-scheme="none" style="background-color: transparent;"><a data-v-303bbf52="" data-v-0bfdceda="" href="https://www.luogu.com.cn/ide" target="_blank" colorscheme="none" class="color-none" style="color: inherit;"><span data-v-0bfdceda="" data-v-303bbf52="" class="icon"><svg data-v-0bfdceda="" data-v-303bbf52="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="terminal" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svg-inline--fa fa-terminal fa-w-20"><path data-v-0bfdceda="" data-v-303bbf52="" fill="currentColor" d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z" class=""></path></svg></span> <span data-v-0bfdceda="" data-v-303bbf52="" class="text"><span data-v-1316252e="" data-v-303bbf52="">在线 IDE</span></span> <!----></a> <!----></div> <div data-v-0bfdceda="" data-v-1316252e="" class="nav-item" color-scheme="none" style="background-color: transparent;"><a data-v-303bbf52="" data-v-0bfdceda="" href="https://www.luogu.com.cn/paste" class="color-none" style="color: inherit;"><span data-v-0bfdceda="" class="icon"><svg data-v-0bfdceda="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="clipboard" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-clipboard fa-w-12"><path data-v-0bfdceda="" fill="currentColor" d="M384 112v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112c0-26.51 21.49-48 48-48h80c0-35.29 28.71-64 64-64s64 28.71 64 64h80c26.51 0 48 21.49 48 48zM192 40c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24m96 114v-20a6 6 0 0 0-6-6H102a6 6 0 0 0-6 6v20a6 6 0 0 0 6 6h180a6 6 0 0 0 6-6z" class=""></path></svg></span> <span data-v-0bfdceda="" class="text"><span data-v-1316252e="">云剪贴板</span></span> <!----></a> <!----></div> <div data-v-0bfdceda="" data-v-1316252e="" class="nav-item" color-scheme="none" style="background-color: transparent;"><a data-v-303bbf52="" data-v-0bfdceda="" href="https://www.luogu.com.cn/ranking" class="color-none" style="color: inherit;"><span data-v-0bfdceda="" class="icon"><svg data-v-0bfdceda="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trophy-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-trophy-alt fa-w-18"><path data-v-0bfdceda="" fill="currentColor" d="M552 64H448V24c0-13.3-10.7-24-24-24H152c-13.3 0-24 10.7-24 24v40H24C10.7 64 0 74.7 0 88v56c0 66.5 77.9 131.7 171.9 142.4C203.3 338.5 240 360 240 360v72h-48c-35.3 0-64 20.7-64 56v12c0 6.6 5.4 12 12 12h296c6.6 0 12-5.4 12-12v-12c0-35.3-28.7-56-64-56h-48v-72s36.7-21.5 68.1-73.6C498.4 275.6 576 210.3 576 144V88c0-13.3-10.7-24-24-24zM64 144v-16h64.2c1 32.6 5.8 61.2 12.8 86.2-47.5-16.4-77-49.9-77-70.2zm448 0c0 20.2-29.4 53.8-77 70.2 7-25 11.8-53.6 12.8-86.2H512v16zm-127.3 4.7l-39.6 38.6 9.4 54.6c1.7 9.8-8.7 17.2-17.4 12.6l-49-25.8-49 25.8c-8.8 4.6-19.1-2.9-17.4-12.6l9.4-54.6-39.6-38.6c-7.1-6.9-3.2-19 6.7-20.5l54.8-8 24.5-49.6c4.4-8.9 17.1-8.9 21.5 0l24.5 49.6 54.8 8c9.6 1.5 13.5 13.6 6.4 20.5z" class=""></path></svg></span> <span data-v-0bfdceda="" class="text"><span data-v-1316252e="">咕值排名</span></span> <!----></a> <!----></div></div></div> <div data-v-0bfdceda="" data-v-1316252e="" class="nav-item" data-v-3e63dd22="" style="background-color: transparent;"><a data-v-303bbf52="" data-v-0bfdceda="" href="https://www.luogu.com.cn/problem/list" class="color-none" style="color: inherit;"><span data-v-0bfdceda="" class="icon"><svg data-v-0bfdceda="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="book" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-book fa-w-14"><path data-v-0bfdceda="" fill="currentColor" d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z" class=""></path></svg></span> <span data-v-0bfdceda="" class="text"><span data-v-1316252e="">题库</span></span> <!----></a> <!----></div> <div data-v-0bfdceda="" data-v-1316252e="" class="nav-item" data-v-3e63dd22="" style="background-color: transparent;"><a data-v-303bbf52="" data-v-0bfdceda="" href="https://www.luogu.com.cn/training/list" class="color-none" style="color: inherit;"><span data-v-0bfdceda="" class="icon"><svg data-v-0bfdceda="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="clipboard-list-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-clipboard-list-check fa-w-12"><path data-v-0bfdceda="" fill="currentColor" d="M336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 40c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zM65.6 209.4l12.7-12.6c2.1-2.1 5.5-2.1 7.6 0l20.6 20.8 47.6-47.2c2.1-2.1 5.5-2.1 7.6 0l12.6 12.7c2.1 2.1 2.1 5.5 0 7.6l-64.2 63.6c-2.1 2.1-5.5 2.1-7.6 0L65.6 217c-2.1-2.1-2.1-5.5 0-7.6zM96 392c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm224-16c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-128c0 4.4-4.3 8-9.6 8H154.1l32.3-32h124c5.3 0 9.6 3.6 9.6 8v16z" class=""></path></svg></span> <span data-v-0bfdceda="" class="text"><span data-v-1316252e="">题单</span></span> <!----></a> <!----></div> <div data-v-0bfdceda="" data-v-1316252e="" class="nav-item" data-v-3e63dd22="" style="background-color: transparent;"><a data-v-303bbf52="" data-v-0bfdceda="" href="https://www.luogu.com.cn/contest/list" class="color-none" style="color: inherit;"><span data-v-0bfdceda="" class="icon"><svg data-v-0bfdceda="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="signal" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svg-inline--fa fa-signal fa-w-20"><path data-v-0bfdceda="" fill="currentColor" d="M216 288h-48c-8.84 0-16 7.16-16 16v192c0 8.84 7.16 16 16 16h48c8.84 0 16-7.16 16-16V304c0-8.84-7.16-16-16-16zM88 384H40c-8.84 0-16 7.16-16 16v96c0 8.84 7.16 16 16 16h48c8.84 0 16-7.16 16-16v-96c0-8.84-7.16-16-16-16zm256-192h-48c-8.84 0-16 7.16-16 16v288c0 8.84 7.16 16 16 16h48c8.84 0 16-7.16 16-16V208c0-8.84-7.16-16-16-16zm128-96h-48c-8.84 0-16 7.16-16 16v384c0 8.84 7.16 16 16 16h48c8.84 0 16-7.16 16-16V112c0-8.84-7.16-16-16-16zM600 0h-48c-8.84 0-16 7.16-16 16v480c0 8.84 7.16 16 16 16h48c8.84 0 16-7.16 16-16V16c0-8.84-7.16-16-16-16z" class=""></path></svg></span> <span data-v-0bfdceda="" class="text"><span data-v-1316252e="">比赛</span></span> <!----></a> <!----></div> <!----> <div data-v-0bfdceda="" data-v-1316252e="" class="nav-item" data-v-3e63dd22="" style="background-color: transparent;"><a data-v-303bbf52="" data-v-0bfdceda="" href="https://www.luogu.com.cn/discuss/lists" colorscheme="none" class="color-none" style="color: inherit;"><span data-v-0bfdceda="" data-v-303bbf52="" class="icon"><svg data-v-0bfdceda="" data-v-303bbf52="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="comments" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-comments fa-w-18"><path data-v-0bfdceda="" data-v-303bbf52="" fill="currentColor" d="M416 192c0-88.4-93.1-160-208-160S0 103.6 0 192c0 34.3 14.1 65.9 38 92-13.4 30.2-35.5 54.2-35.8 54.5-2.2 2.3-2.8 5.7-1.5 8.7S4.8 352 8 352c36.6 0 66.9-12.3 88.7-25 32.2 15.7 70.3 25 111.3 25 114.9 0 208-71.6 208-160zm122 220c23.9-26 38-57.7 38-92 0-66.9-53.5-124.2-129.3-148.1.9 6.6 1.3 13.3 1.3 20.1 0 105.9-107.7 192-240 192-10.8 0-21.3-.8-31.7-1.9C207.8 439.6 281.8 480 368 480c41 0 79.1-9.2 111.3-25 21.8 12.7 52.1 25 88.7 25 3.2 0 6.1-1.9 7.3-4.8 1.3-2.9.7-6.3-1.5-8.7-.3-.3-22.4-24.2-35.8-54.5z" class=""></path></svg></span> <span data-v-0bfdceda="" data-v-303bbf52="" class="text"><span data-v-1316252e="" data-v-303bbf52="">讨论</span></span> <!----></a> <!----></div> <!----></div></nav> <!----> <div data-v-3e63dd22="" class="switch-btn"><svg data-v-3e63dd22="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="list" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-list fa-w-16"><path data-v-3e63dd22="" fill="currentColor" d="M80 368H16a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-64a16 16 0 0 0-16-16zm0-320H16A16 16 0 0 0 0 64v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16zm0 160H16a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-64a16 16 0 0 0-16-16zm416 176H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z" class=""></path></svg></div></div> <div data-v-90bffe18="" class="main-container"><div data-v-7958fe72="" data-v-90bffe18="" class="wrapper wrapped lfe-body header-layout normal"><div data-v-7958fe72="" class="background" style="background: linear-gradient(90deg, rgb(35, 37, 38), rgb(65, 67, 69)); filter: blur(0px) brightness(100%);"></div> <div data-v-52820d90="" data-v-15b6799b="" data-v-90bffe18="" class="header" currentdata="[object Object]" data-v-7958fe72=""><div data-v-52820d90="" class="user-nav"><nav data-v-1bdb8ce2="" data-v-52820d90=""><div data-v-034eb354="" data-v-1bdb8ce2=""><div data-v-034eb354="" class="search-wrap"><input data-v-034eb354="" type="text"></div> <a data-v-303bbf52="" data-v-034eb354="" href="javascript:void 0" colorscheme="none" class="icon color-none"><svg data-v-034eb354="" data-v-303bbf52="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-search fa-w-16"><path data-v-034eb354="" data-v-303bbf52="" fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" class=""></path></svg></a></div> <a data-v-303bbf52="" data-v-1bdb8ce2="" href="https://www.luogu.com.cn/auth/login" class="login color-none"><span data-v-1bdb8ce2="">登录</span></a> <a data-v-303bbf52="" data-v-1bdb8ce2="" href="https://www.luogu.com.cn/auth/register" class="login color-none"><span data-v-1bdb8ce2="">注册</span></a> <img data-v-1bdb8ce2="" src="./【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04 Div.2 - 洛谷 _ 计算机科学教育新生态_files/1.png" class="avatar"></nav></div> <nav data-v-019a82aa="" data-v-52820d90="" class="lfe-caption bread-crumb"><span data-v-019a82aa=""><a data-v-303bbf52="" data-v-019a82aa="" href="https://www.luogu.com.cn/" colorscheme="default" class="link color-default">洛谷</a> <span data-v-019a82aa="" class="text"> / </span></span><span data-v-019a82aa=""><a data-v-303bbf52="" data-v-019a82aa="" href="https://www.luogu.com.cn/contest/list" colorscheme="default" class="link color-default">比赛列表</a> <span data-v-019a82aa="" class="text"> / </span></span><span data-v-019a82aa=""><span data-v-019a82aa="" class="text">比赛详情</span> <!----></span></nav> <h1 data-v-52820d90="" class="lfe-h1">
+    【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04 Div.2
+  </h1> <div data-v-52820d90="" class="functional"><div data-v-52820d90="" class="stat"><div data-v-83303c00="" data-v-15b6799b="" class="stat color-inverse" data-v-52820d90=""><div data-v-83303c00="" class="field"><span data-v-83303c00="" class="key lfe-caption">题目数</span> <span data-v-83303c00="" class="value lfe-caption">4</span></div><div data-v-83303c00="" class="field"><span data-v-83303c00="" class="key lfe-caption">报名人数</span> <span data-v-83303c00="" class="value lfe-caption">4.0k</span></div></div></div> <div data-v-52820d90="" class="operation"></div></div></div></div> <main data-v-90bffe18="" class="wrapped lfe-body" style="background-color: rgb(239, 239, 239);"><div data-v-6febb0e8="" data-v-90bffe18="" class="full-container" currenttemplate="ContestShow" style="margin-top: 2em;"><div data-v-796309f8="" class="card padding-none" data-v-6febb0e8=""><div data-v-7092f3a4="" class="menu" type="underline" data-v-796309f8="" style="--main-color:#3498db; margin: 0px 0.5em;"><!----> <ul data-v-7092f3a4="" class="items"><li data-v-7092f3a4=""><span data-v-7092f3a4="" class="entry selected">
+        比赛说明
+      </span> <!----></li><li data-v-7092f3a4=""><span data-v-7092f3a4="" class="entry">
+        题目列表
+      </span> <!----></li><li data-v-7092f3a4=""><span data-v-7092f3a4="" class="entry">
+        排行榜
+      </span> <!----></li></ul></div></div> <div data-v-6febb0e8="" data-v-0cd59e64="" class="full-container" style="margin-top: 0px;"><section data-v-0cd59e64="" data-v-6febb0e8="" class="side"><div data-v-796309f8="" class="card padding-default" data-v-6febb0e8=""><div data-v-3a151854="" class="info-rows" data-v-796309f8="" style="margin-bottom: 1em;"><div data-v-3a151854=""><span data-v-3a151854=""><span data-v-3a151854="">比赛编号</span></span><span data-v-3a151854=""><span data-v-3a151854="">48456</span></span></div><div data-v-3a151854=""><span data-v-3a151854=""><span data-v-3a151854="">举办者</span></span><span data-v-3a151854=""><span data-v-3a151854=""><a data-v-303bbf52="" href="https://www.luogu.com.cn/team/1000" class="color-default">洛谷官方团队</a></span></span></div><div data-v-3a151854=""><span data-v-3a151854=""><span data-v-3a151854="">比赛类型</span></span><span data-v-3a151854=""><div data-v-c0996248="" class="type" data-v-3a151854=""><span data-v-20b7d558="" data-v-c0996248="" class="lfe-caption tag" style="color: rgb(255, 255, 255); background: rgb(255, 193, 22);">
+    IOI
+  </span> <span data-v-20b7d558="" data-v-c0996248="" class="lfe-caption tag" style="color: rgb(255, 255, 255); background: rgb(82, 196, 26);">Rated</span> <span data-v-20b7d558="" data-v-c0996248="" class="lfe-caption tag" style="color: rgb(255, 255, 255); background: rgb(231, 76, 60);">
+    官方比赛
+  </span></div></span></div><div data-v-3a151854=""><span data-v-3a151854=""><span data-v-3a151854="">开始时间</span></span><span data-v-3a151854=""><time data-v-3a151854="">2021-08-20 14:00</time></span></div><div data-v-3a151854=""><span data-v-3a151854=""><span data-v-3a151854="">结束时间</span></span><span data-v-3a151854=""><time data-v-3a151854="">2021-08-20 18:00</time></span></div><div data-v-3a151854=""><span data-v-3a151854=""><span data-v-3a151854="">比赛时长</span></span><span data-v-3a151854=""><span data-v-3a151854="">4.00h</span></span></div></div> <!----></div><div data-v-796309f8="" class="card padding-default" data-v-6febb0e8=""><h2 data-v-796309f8="" class="lfe-h2" style="color: rgb(231, 76, 60);">
+        比赛已经结束了
+      </h2> <p data-v-796309f8="">请注意比赛排行榜非实时更新，提交出分到榜单更新最多约有1分钟时间差。</p> <!----></div><div data-v-0a593618=""><a data-v-0a593618="" href="https://class.luogu.com.cn/course/yugu21nnoip" target="_blank"><img data-v-0a593618="" src="./【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04 Div.2 - 洛谷 _ 计算机科学教育新生态_files/5fz1u0gs.png"></a> <span data-v-0a593618=""><svg data-v-0a593618="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ad" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-ad fa-w-16"><path data-v-0a593618="" fill="currentColor" d="M157.52 272h36.96L176 218.78 157.52 272zM352 256c-13.23 0-24 10.77-24 24s10.77 24 24 24 24-10.77 24-24-10.77-24-24-24zM464 64H48C21.5 64 0 85.5 0 112v288c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM250.58 352h-16.94c-6.81 0-12.88-4.32-15.12-10.75L211.15 320h-70.29l-7.38 21.25A16 16 0 0 1 118.36 352h-16.94c-11.01 0-18.73-10.85-15.12-21.25L140 176.12A23.995 23.995 0 0 1 162.67 160h26.66A23.99 23.99 0 0 1 212 176.13l53.69 154.62c3.61 10.4-4.11 21.25-15.11 21.25zM424 336c0 8.84-7.16 16-16 16h-16c-4.85 0-9.04-2.27-11.98-5.68-8.62 3.66-18.09 5.68-28.02 5.68-39.7 0-72-32.3-72-72s32.3-72 72-72c8.46 0 16.46 1.73 24 4.42V176c0-8.84 7.16-16 16-16h16c8.84 0 16 7.16 16 16v160z" class=""></path></svg>&nbsp;洛谷推荐</span> <button data-v-86f36770="" data-v-0a593618="" type="button" class="lfe-form-sz-small" style="border-color: rgba(255, 255, 255, 0.5); color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.5);">关闭</button></div></section> <section data-v-0cd59e64="" data-v-6febb0e8="" class="main"><section data-v-6febb0e8=""><div data-v-6febb0e8=""><div data-v-796309f8="" class="card padding-default"><div data-v-5a58a989="" class="marked" data-v-796309f8=""><h2>简介</h2>
+<p>本场比赛为【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04，简称 LGR-088 &amp; PMOI R4。</p>
+<p>本场比赛时间为 2021 年 8 月 20 日星期五，下午 14:00 ~ 18:00。</p>
+<p>本场比赛分 Div 进行。Div.1 偏难，Div.2 较简单。</p>
+<p>本场比赛工作人员：</p>
+<p>出题人：<a href="https://www.luogu.com.cn/user/179871">lnlhm</a>，<a href="https://www.luogu.com.cn/user/196899">lndjy</a>，<a href="https://www.luogu.com.cn/user/87064">ducati</a>，<a href="https://www.luogu.com.cn/user/154560">Silver187</a>，<a href="https://www.luogu.com.cn/user/3296">noip</a>。<br>
+验题人：<a href="https://www.luogu.com.cn/user/87064">ducati</a>，<a href="https://www.luogu.com.cn/user/154560">Silver187</a>，<a href="https://www.luogu.com.cn/user/196899">lndjy</a>，<a href="https://www.luogu.com.cn/user/150522">b6e0</a>，<a href="https://www.luogu.com.cn/user/317459">wxy_</a>，<a href="https://www.luogu.com.cn/user/179871">lnlhm</a>，<a href="https://www.luogu.com.cn/user/219099">pocafup</a>。<br>
+审题人：<a href="https://www.luogu.com.cn/user/49093">_sys</a>。<br>
+总负责人：<a href="https://www.luogu.com.cn/user/196899">lndjy</a>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">出题人</th>
+<th style="text-align:center">验题人</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">人赢</td>
+<td style="text-align:center">传统</td>
+<td style="text-align:center">lnlhm</td>
+<td style="text-align:center">lndjy</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">生成树</td>
+<td style="text-align:center">传统</td>
+<td style="text-align:center">lndjy</td>
+<td style="text-align:center">ducati</td>
+</tr>
+<tr>
+<td style="text-align:center">C</td>
+<td style="text-align:center">可怜的团主</td>
+<td style="text-align:center">传统</td>
+<td style="text-align:center">ducati</td>
+<td style="text-align:center">b6e0</td>
+</tr>
+<tr>
+<td style="text-align:center">D</td>
+<td style="text-align:center">猜排列</td>
+<td style="text-align:center">交互</td>
+<td style="text-align:center">Silver187</td>
+<td style="text-align:center">ducati</td>
+</tr>
+<tr>
+<td style="text-align:center">E</td>
+<td style="text-align:center">排列变换</td>
+<td style="text-align:center">传统</td>
+<td style="text-align:center">ducati</td>
+<td style="text-align:center">Silver187</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">[Ynoi2007]TB5x</td>
+<td style="text-align:center">交互</td>
+<td style="text-align:center">noip</td>
+<td style="text-align:center">noip</td>
+</tr>
+</tbody>
+</table>
+<p>PMOI 历经 4 个月的精心准备，以月赛的形式再次与大家见面，<s>虽说审核比赛时出了一些小插曲</s>，但比赛的质量较以往也有了大幅的提升。</p>
+<h2>知乎评价通道</h2>
+<p><a href="http://www.zhihu.com/question/476730275">http://www.zhihu.com/question/476730275</a></p>
+<h2>奖品</h2>
+<p>Div.1 前 3 名可以获得随机题材本子一本，大陆地区包邮。3 个月内获得过奖品的优秀选手不再重复颁奖，资格顺延。</p>
+<h2>直播讲解</h2>
+<p>比赛赛后将提供直播视频讲解，主讲人 <a href="https://www.luogu.com.cn/user/87064">ducati</a>、<a href="https://www.luogu.com.cn/user/179871">lnlhm</a>、<a href="https://www.luogu.com.cn/user/3296">noip</a>。</p>
+<p><strong>时间：8 月 20 日（比赛当日）19 时。</strong></p>
+<p>上车需买票，票价 10 元。如果错过直播讲解也没关系，买票上车后，依然可以观看回放。</p>
+<p>题解在比赛结束后向报名讲评的同学先行公开，题解通道将于赛后 3 日开放。</p>
+<p><strong>购票上车/观看讲评地址：<a href="https://class.luogu.com.cn/course/lgr88">https://class.luogu.com.cn/course/lgr88</a>。</strong></p>
+<h2>提示</h2>
+<ol>
+<li>
+<p><strong>本场比赛有 6 道题目</strong>，为 IOI 赛制，<strong>IOI 赛制以最后一次提交为准</strong>。</p>
+</li>
+<li>
+<p>本次比赛<strong>计入 Rating</strong>，根据比赛成绩进行积分，影响咕值。同时参加两个 Div 的选手，只计算其中<strong>相对排名较高</strong>的一场的 Rating。<strong>不会因为参加比赛而降 Rating</strong>，请放心参加。</p>
+</li>
+<li>
+<p>严禁开小号/和他人分享答案以达成任何目的，或者直接套用非本人编写的代码。本次比赛将<strong>使用反作弊系统</strong>，因为任何原因被反作弊系统发现（包括多人套用同一个互联网公开的代码）、被举报或在抽查代码是发现选手有影响比赛成绩公平性的行为，视情节严重性给予取消成绩、警告性棕名或者封号的处罚。</p>
+</li>
+<li>
+<p>如果发现比赛有原题或其他影响公平性的因素，请私聊管理员和出题人，而不要以任何方式公开，违者视影响可能会得到警告性棕名或禁言的惩罚。</p>
+</li>
+</ol>
+<h2>广告</h2>
+<p>虽然 CSP 第一轮（初赛）对大多数同学来说都不是事，但如果对即将到来的第一轮感到担心，那么可以报名洛谷初赛辅导课程进行知识点的梳理，并模拟赛查缺补漏。<a href="https://class.luogu.com.cn/course/yugu21acs">【点击查看报名&gt;&gt;】</a></p>
+<p><a href="https://class.luogu.com.cn/course/yugu21acs"><img src="./【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04 Div.2 - 洛谷 _ 计算机科学教育新生态_files/7vosh5tt.png" alt=""></a></p>
+</div></div></div></section></section></div></div></main> <div data-v-7958fe72="" data-v-90bffe18="" class="wrapper wrapped lfe-body"><div data-v-7958fe72="" class="background" style="background: rgb(51, 51, 51); filter: blur(0px) brightness(100%);"></div> <div data-v-009d73c6="" data-v-90bffe18="" class="footer" data-v-7958fe72="" style="display: none;"><img data-v-009d73c6="" src="./【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04 Div.2 - 洛谷 _ 计算机科学教育新生态_files/logo-single.png" class="logo-img"> <div data-v-009d73c6="" class="slogan">
+    在洛谷，<br data-v-009d73c6="">
+    享受 Coding 的欢乐
+  </div> <img data-v-009d73c6="" src="./【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04 Div.2 - 洛谷 _ 计算机科学教育新生态_files/wechat_qr.png" class="qr-img"> <div data-v-009d73c6="" class="info"><p data-v-009d73c6=""><a data-v-303bbf52="" data-v-009d73c6="" href="https://www.luogu.com.cn/blog/luogu/about-luogu" colorscheme="default" class="color-default">
+        关于洛谷
+      </a> |
+      <a data-v-303bbf52="" data-v-009d73c6="" href="https://www.luogu.com.cn/blog/luogu/luogu-help" colorscheme="default" class="color-default">
+        帮助中心
+      </a> |
+      <a data-v-303bbf52="" data-v-009d73c6="" href="https://www.luogu.com.cn/blog/luogu/luogu-EULA" colorscheme="default" class="color-default">
+        用户协议
+      </a> |
+      <a data-v-303bbf52="" data-v-009d73c6="" href="https://www.luogu.com.cn/blog/luogu/contact-us" colorscheme="default" class="color-default">
+        联系我们
+      </a> <br data-v-009d73c6=""> <a data-v-303bbf52="" data-v-009d73c6="" href="https://www.luogu.com.cn/discuss/lists?forumname=miaomiaowu" colorscheme="default" class="color-default">
+        小黑屋
+      </a> |
+      <a data-v-303bbf52="" data-v-009d73c6="" href="https://www.luogu.com.cn/judgement" colorscheme="default" class="color-default">
+        陶片放逐
+      </a> |
+      <a data-v-303bbf52="" data-v-009d73c6="" href="https://www.luogu.com.cn/blog/luogu/social-rules" colorscheme="default" class="color-default">
+        社区规则
+      </a> |
+      <a data-v-303bbf52="" data-v-009d73c6="" href="https://www.lagou.com/gongsi/369082.html" target="_blank" colorscheme="default" class="color-default">
+        招贤纳才
+      </a> <br data-v-009d73c6="">
+
+      Developed by the
+      <a data-v-303bbf52="" data-v-009d73c6="" href="https://github.com/luogu-dev" target="_blank" colorscheme="default" class="color-default">
+        Luogu Dev Team
+      </a> <br data-v-009d73c6="">
+      2013-2021 , © 洛谷
+      <br data-v-009d73c6="">
+
+      增值电信业务经营许可证 沪B2-20200477
+      <br data-v-009d73c6=""> <a data-v-303bbf52="" data-v-009d73c6="" href="http://beian.miit.gov.cn/" target="_blank" colorscheme="default" class="color-default">
+        沪ICP备18008322号
+      </a>
+      All rights reserved.
+      </p></div></div></div></div></div>
+<!-- <script src="//www.recaptcha.net/recaptcha/api.js?hl=zh-CN&render=explicit&onload=renderCaptcha" async defer></script> -->
+
+
+<div><div class="_th-container">
+    <div class="_th-click-hover _item-input">
+        x1.00
+    </div>
+    <div class="_th-item _item-x2">&gt;</div>
+    <div class="_th-item _item-x-2">&lt;</div>
+    <div class="_th-item _item-xx2">&gt;&gt;</div>
+    <div class="_th-item _item-xx-2">&lt;&lt;</div>
+    <div class="_th-item _item-reset">O</div>
+</div>
+<div class="_th_cover-all-show-times _th_hidden">
+    <div class="_th_times">x1.00</div>
+</div></div><script src="./【LGR-088】洛谷 8 月月赛 &amp; 「PMOI」Round · 04 Div.2 - 洛谷 _ 计算机科学教育新生态_files/z_stat.php"></script><img title="点我阅读" src="chrome-extension://hdeikpphnbclpacdjdjjkpmbcacopnog/images/icon48.png" style="height: 30px; width: 30px; background-color: rgb(255, 255, 0); display: block; position: fixed; z-index: 999999; visibility: hidden;"></body></html>
