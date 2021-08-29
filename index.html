@@ -1,151 +1,331 @@
-<!--
-////////////////////////////////////////////////////////////////////
-//                          _ooOoo_                               //
-//                         o8888888o                              //
-//                         88" . "88                              //
-//                         (| ^_^ |)                              //
-//                         O\  =  /O                              //
-//                      ____/`---'\____                           //
-//                    .'  \\|     |//  `.                         //
-//                   /  \\|||  :  |||//  \                        //
-//                  /  _||||| -:- |||||-  \                       //
-//                  |   | \\\  -  /// |   |                       //
-//                  | \_|  ''\---/''  |   |                       //
-//                  \  .-\__  `-`  ___/-. /                       //
-//                ___`. .'  /--.--\  `. . ___                     //
-//              ."" '<  `.___\_<|>_/___.'  >'"".                  //
-//            | | :  `- \`.;`\ _ /`;.`/ - ` : | |                 //
-//            \  \ `-.   \_ __\ /__ _/   .-` /  /                 //
-//     ========`-.____`-.___\_____/___.-`____.-'========          //
-//                           `=---='                              //
-//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
-//           佛祖保佑       永无BUG     永不修改                  //
-////////////////////////////////////////////////////////////////////
--->
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=11" id="mixia_vpid">
-    <title>lcf's world</title>
-    <meta name=keywords content="ScottSun,小站,ScottSun小站,ScottSun的小站,ScottSun的主页,ScottSun主页,ScottSun个人主页,
-                               ScottSun的个人主页,个人主页,socttsun,ScottSun,ScottSun引导页,ScottSun个人引导,ScottSun的个引导页">
-    <meta name=description content="ScottSun的小站，通往ScottSun的各个站点。">
-    <link rel="icon" href="Picture/tx.jpg">
-    <link rel="shortcut icon" href="Picture/tx.jpg">
-    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script>
-        fetch("https://v1.hitokoto.cn/")
-            .then(res => res.json())
-            .then(data => susays.innerText = data.hitokoto);
-    </script>
-    <style>
+	<meta charset="utf-8">
 
-        
-    body {
-    font-size: 18px;
-    color: #6c767d;
-    background-color: #ebf1f5;
-    background-image: url('images.php');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    min-height: 800px;
-}
- 
-        
-    </style>
-    
+	<title>Arknights</title>
+	<meta name="description" content="Arknights">
+	<meta name="author" content="Mashiro">
 
-    </iframe>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 
-   
+	<!--[if lt IE 9]>
+	<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
 
+	<link rel="stylesheet" href="css/normalize.css?v=1.0">
+	<link rel="stylesheet" href="css/styles.css?v=1.0">
 
+	<script async src="https://s96.cnzz.com/z_stat.php?id=1277700683&web_id=1277700683"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100439904-7"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
 
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-100439904-7');
+
+	</script>
+
+	<style>
+		/* loader */
+		.loader-layer {
+			background: #016d8d url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.7.0/img/other/avg_2_1.png) no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+		}
+
+		.loader-layer .tips {
+			font-family: 'Noto Sans SC', sans-serif;
+			color: #fff;
+			font-size: 2vh;
+			font-weight: 500;
+			pointer-events: auto;
+			margin: 10px;
+			position: fixed;
+		}
+
+		.loader {
+			width: calc(100% + 100px);
+			overflow-x: hidden;
+			overflow-y: hidden;
+			position: absolute;
+			left: -50px;
+		}
+
+		.loader .bar {
+			position: relative;
+			height: 2px;
+			width: 500px;
+			margin: 0 auto;
+			background: #fff;
+			margin-top: 150px;
+		}
+
+		.loader .circle {
+			position: absolute;
+			top: -30px;
+			margin-left: -30px;
+			height: 60px;
+			width: 60px;
+			left: 0;
+			background: #fff;
+			border-radius: 30%;
+			-webkit-animation: move 5s infinite;
+		}
+
+		.loader p {
+			position: absolute;
+			top: -35px;
+			right: -85px;
+			text-transform: uppercase;
+			color: #016d8d;
+			font-family: helvetica, sans-serif;
+			font-weight: bold;
+		}
+
+		@-webkit-keyframes move {
+			0% {
+				left: 0;
+			}
+
+			50% {
+				left: 100%;
+				-webkit-transform: rotate(450deg);
+				width: 150px;
+				height: 150px;
+			}
+
+			75% {
+				left: 100%;
+				-webkit-transform: rotate(450deg);
+				width: 150px;
+				height: 150px;
+			}
+
+			100% {
+				right: 100%;
+			}
+		}
+
+	</style>
 
 </head>
 
 <body>
-    <span class="mobile btn-mobile-menu">
-        <i class="fa fa-bars btn-mobile-menu__icon"></i>
-        <i class="fa fa-chevron-circle-up btn-mobile-close__icon hidden"></i>
-    </span>
-    <div class="panel-main">
-        <div class="panel-main__inner panel-inverted">
-            <div class="panel-main__content">
-                <a href="" title="ScottSun"><img src="Picture/tx.jpg" width="150" alt="LOGO" class="panel-cover__logo logo"></a>
-                <h1 class="panel-cover__title panel-title"><a href="ScottSunの小窝.html" title="">LCF</a></h1>
-                <span class="panel-cover__subtitle panel-subtitle"><script>hitokoto()</script>
-        <hr class="panel-cover__divider">
-        <p class="panel-cover__description" id="susays"></p>
-        <hr class="panel-cover__divider"> 
-        <p class="panel-cover__description">Hi欢迎来到lcfの小世界！</p>
-	<p class="footer">Copyright © 2021 <a href="ScottSunの小窝.html" target="_blank">lcf</a> All Rights Reserved.</p>	
+	<!--
+	  -- Author: Mashiro
+	  -- Site: https://2heng.xin
+	  -- License: MIT
+	  -->
 
-        <div class="navigation-wrapper">
-          <div>
-            <nav class="cover-navigation cover-navigation--primary">
-              <ul class="navigation">
-                  
-                <li class="navigation__item"><a href="ScottSunの小窝.html" title="ScottSun"> 学习</a></li>
-                <li class="navigation__item"><a href="arknights-ui-master/index.html" title="moyu">游戏</a></li>
-               
-                
-                <li class="navigation__item"><a href=“” title="">睡觉</a></li>
-              </ul>
-            </nav>
-          </div>
-          
-<div>
-<nav class="cover-navigation navigation--social">
-  <ul class="navigation">
-  <!-- Weibo -->
-  <li class="navigation__item">
-    <a href="" title="我的微博" target="_blank">
-      <i class="social fa fa-weibo"></i>
-    </a>
-  </li>
-  <!-- QQ -->
-  <li class="navigation__item">
-    <a href="" title="@QQ" target="_blank">
-      <i class="social fa fa-qq"></i>
-    </a>
-  </li>
-  
-  <!-- Telegram -->
-  <li class="navigation__item">
-    <a href="#" title="Tg" target="_blank">
-      <i class="social fa fa-telegram"></i>
-    </a>
-  </li>
-  <!-- RSS -->
-  <li class="navigation__item">
-    <a href="#" rel="author" title="RSS" target="_blank">
-      <i class="social fa fa-rss"></i>
-    </a>
-  </li>
-  <!-- Email -->
-  <li class="navigation__item">
-    <a href="mailto:630039548@qq.com" title="发邮件给我">
-      <i class="social fa fa-envelope"></i>
-    </a>
-  </li>
-  </ul>
-</nav>
-</div>
-        </div>
-      </div>
-    </div>
-    <div class="panel-cover--overlay cover-slate"></div>
-  </div>
-</header>
+	<div class="loader-layer" id="loader-layer">
+		<div class="tips">Tips: 如果加载速度过慢可以使用代理（本页托管于 GitHub Pages）。</div>
+		<div class="loader" id="loader">
+			<div class="bar">
+				<div class="circle"></div>
+				<p>Loading</p>
+			</div>
+		</div>
+	</div>
+	<header>
+		<div class="author">
 
-<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+			<a href="https://github.com/mashirozx/arknights-ui/" target="_blank"><img src="img/github.svg" class="social-link"> GitHub </a> <a href="https://weibo.com/2960337711" target="_blank"><img src="img/weibo.svg" class="social-link"> Weibo </a> <a href="https://2heng.xin/" target="_blank"><img src="img/wordpress.svg" class="social-link"> Blog </a>
+
+		</div>
+
+		<div class="level-box-container">
+			<div class="level-box" id="level-box-adapter">
+				<div class="level-logo"></div>
+				<div class="user-level">
+					<div class="level-chart">
+						<div class="chart-bg" id="chart-bg"></div>
+						<div class="chart-pr" id="chart-pr"></div>
+						<div class="level-num" id="level-num">64</div>
+					</div>
+				</div>
+				<div class="user-info">
+					<div class="name">Mashiro</div>
+					<div class="id">ID: 37040126</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div id="view-box" class="view-box">
+		<div id="mark" class="mark" data-pointer-events="true">
+			<div id="bg-layer" class="layer" data-depth="0.0">
+				<img id="bg-img" class="cover" src="img/UI_HOME_FRONT_BKG.png">
+			</div>
+			<div id="char-arts-layer" class="layer" data-depth="0.01">
+				<div class="char perspective box">
+					<img src="img/char_010_chen_2b_merged.png">
+				</div>
+			</div>
+			<div id="left-menu-layer" class="layer" data-depth="0.2">
+				<div class="left menu box">
+					<div class="container" id="left-mune-adapter">
+						<div class="top">
+							<div class="dialog">
+								<span>博士？睡着了？哼，真没紧张感。</span>
+							</div>
+						</div>
+						<div class="bottom">
+							<div class="left">
+								<div class="activity-img"></div>
+							</div>
+							<div class="right">
+								<div class="pos-1">
+									<div class="friends">
+										<div class="icon"></div>
+										<div class="text">好友</div>
+									</div>
+								</div>
+								<div class="pos-2">
+									<div class="information">
+										<div class="icon"></div>
+										<div class="text">情报</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="right-menu-layer" class="layer" data-depth="0.2">
+				<div class="right menu box">
+					<div class="popup" id="right-mune-popup-adapter"></div>
+					<div class="container" id="right-mune-adapter">
+						<div class="pos-1">
+							<div class="top">
+								<div class="line-left"></div>
+								<div class="battery"></div>
+								<div class="time" id="time">2019/06/05 22:33</div>
+								<div class="line-right"></div>
+							</div>
+							<div class="bottom">
+								<div class="bg"></div>
+								<div class="status">
+									<div class="item money">
+										<div class="icon"></div>
+										<div class="amount">1000</div>
+									</div>
+									<div class="item jasper">
+										<div class="icon"></div>
+										<div class="amount">1000</div>
+										<div class="more"></div>
+									</div>
+									<div class="item stone">
+										<div class="icon"></div>
+										<div class="amount">1000</div>
+										<div class="more"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pos-2">
+							<div class="intellect">
+								<div class="icon"></div>
+								<div class="content">
+									<div class="figure">
+										<div class="value">125</div>
+										<div class="total">/125</div>
+									</div>
+									<div class="battle">
+										<div class="text">作战</div>
+										<div class="current">当前</div>
+										<div class="level">5-10 长夜终尽</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pos-3">
+							<div class="team">
+								<div class="icon"></div>
+								<div class="text">编队</div>
+							</div>
+							<div class="member">
+								<div class="icon"></div>
+								<div class="text">干员</div>
+								<div class="desc">角色管理</div>
+							</div>
+							<div class="blank"></div>
+						</div>
+						<div class="pos-4">
+							<div class="shop">
+								<div class="icon"></div>
+								<div class="text">采购中心</div>
+							</div>
+							<div class="gamble">
+								<div class="top">
+									<div class="icon"></div>
+									<div class="text">招募</div>
+								</div>
+								<div class="bottom">
+									<div class="left">
+										<div class="icon"></div>
+										<div class="text">公开招募</div>
+									</div>
+									<div class="right">
+										<div class="icon"></div>
+										<div class="text">干员寻访</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pos-5">
+							<div class="task">
+								<div class="icon"></div>
+								<div class="text">任务</div>
+							</div>
+							<div class="infrastructure">
+								<div class="icon"></div>
+								<div class="text">基建</div>
+								<div class="beta"></div>
+							</div>
+							<div class="warehouse">
+								<div class="icon"></div>
+								<div class="text">仓库</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<canvas id="canvas-dust"></canvas>
+		</div>
+	</div>
+
+	<script>
+		/* loader */
+		(function() {
+			document.querySelector('#loader').setAttribute('style', 'transform: scale(' + Math.max(window.innerHeight, window.innerWidth) / 1366 + ') translateY(-50%); top: 60%; transform-origin: top center;');
+		})();
+
+	</script>
+
+	<script src="js/src/arknights.js"></script>
+	<script src="js/src/jquery.3.3.1.min.js?v=1.0"></script>
+	<script src="js/src/jquery.pjax.js?v=1.0"></script>
+	<script src="js/src/GYST.js?v=1.0"></script>
+	<script src="js/src/parallax.3.1.0.min.js?v=1.0"></script>
+	<script src="js/scripts.js?v=1.1"></script>
 </body>
+
 </html>
-<embed src="music/冬眠 - 司南 - 单曲 - 网易云音乐.m4a" hidden="true" autostart="true" loop="true">
+<embed src="music/sys_titl.mp3" hidden="true" autostart="true" loop="true">
